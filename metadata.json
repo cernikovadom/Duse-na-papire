@@ -1,0 +1,6 @@
+{
+  "name": "Dominika Černíková – Duše na papíře",
+  "description": "Autorský web české spisovatelky Dominiky Černíkové k debutovému románu Mléčné zuby duše a obchod s digitálními produkty pro tvůrce.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
