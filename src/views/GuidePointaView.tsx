@@ -50,7 +50,6 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
       <header className="max-w-4xl mx-auto px-6 pt-4 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
           <div className={product.image ? "md:col-span-7" : "max-w-2xl"}>
-            <span className="eyebrow mb-4 block">Průvodce</span>
             <h1 className="font-serif-cormorant text-4xl sm:text-5xl md:text-6xl font-light text-[#2C2520] leading-[1.12] mb-6">
               {product.title}
             </h1>
@@ -66,10 +65,6 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
                 <Download className="w-4 h-4" />
                 <span>Stáhnout zdarma</span>
               </button>
-
-              <span className="font-serif-cormorant text-2xl font-light text-[#2C2520] px-2">
-                Zdarma
-              </span>
             </div>
           </div>
 
@@ -199,7 +194,6 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
         {/* Download Section (Free Guide) */}
         <section id="stahnout" className="scroll-mt-24 pt-8 pb-16">
           <div className="bg-[#EDE5D8] rounded-[12px] max-w-[560px] mx-auto p-8 sm:p-12 text-center shadow-[0_12px_40px_rgba(44,37,32,0.06)]">
-            <span className="eyebrow mb-3 block">Průvodce zdarma</span>
             <h2 className="font-serif-cormorant text-3xl sm:text-4xl md:text-5xl font-light text-[#2C2520] mb-4">
               Stáhnout průvodce zdarma
             </h2>

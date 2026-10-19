@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Calendar, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { siteContent, BlogPostItem } from '../content';
 import { PlaceholderFrame } from '../components/PlaceholderFrame';
 
@@ -42,19 +42,26 @@ export const BlogListView: React.FC<BlogListViewProps> = ({
             >
               <div>
                 <div className="p-4 pb-0">
-                  <PlaceholderFrame
-                    label={post.imagePlaceholder}
-                    aspectRatio="landscape"
-                    iconType="landscape"
-                  />
+                  {post.image ? (
+                    <div className="relative aspect-[16/10] rounded-[6px] overflow-hidden bg-[#EDE5D8]/40 shadow-[0_2px_8px_rgba(44,37,32,0.04)]">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  ) : (
+                    <PlaceholderFrame
+                      label={post.imagePlaceholder}
+                      aspectRatio="landscape"
+                      iconType="landscape"
+                    />
+                  )}
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-center text-xs font-sans-jost text-[#8C7B6B] mb-3">
-                    <Calendar className="w-3.5 h-3.5 mr-1.5 stroke-[1.5]" />
-                    <span>{post.date}</span>
-                  </div>
-
                   <h2 className="font-serif-cormorant text-2xl font-light text-[#2C2520] group-hover:text-[#8C7B6B] transition-colors leading-snug mb-3">
                     {post.title}
                   </h2>

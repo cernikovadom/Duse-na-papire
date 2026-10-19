@@ -59,7 +59,6 @@ export const FreeGuideModal: React.FC<FreeGuideModalProps> = ({
           <div className="w-10 h-10 rounded-full bg-[#EDE5D8] mx-auto mb-4 flex items-center justify-center text-[#2C2520]">
             <BookOpen className="w-4 h-4 stroke-[1.75]" />
           </div>
-          <span className="eyebrow mb-2 block">Průvodce zdarma</span>
           <h2
             id="free-guide-modal-title"
             className="font-serif-cormorant text-2xl sm:text-3xl font-light text-[#2C2520] mb-3 leading-tight"

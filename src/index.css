@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Jost', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cormorant', Georgia, serif;
+}
+
 @layer base {
   :root {
     --cream: #FAF8F5;

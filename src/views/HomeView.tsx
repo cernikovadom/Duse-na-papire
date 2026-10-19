@@ -57,23 +57,26 @@ export const HomeView: React.FC<HomeViewProps> = ({
         onNavigatePrivacy={onNavigatePrivacy}
       />
 
-      {/* 5. Povídky */}
+      {/* 5. Povídky – úsek Příběhy na jeden šálek čaje prozatím skryt */}
+      {/* 
       <ShortStories
         onOpenStory={onOpenStory}
         onScrollToNewsletter={onScrollToNewsletter}
-      />
+      /> 
+      */}
 
       {/* 6. Povídání (Blog) */}
       <BlogSection
         onOpenPost={onOpenPost}
         onViewAllPosts={onViewAllPosts}
+        onScrollToNewsletter={onScrollToNewsletter}
       />
 
       {/* 7. O mně */}
       <AboutSection />
 
-      {/* 8. Napsali o mně */}
-      <PressAndTestimonials />
+      {/* 8. Napsali o mně – sekce prozatím skryta */}
+      {/* <PressAndTestimonials /> */}
 
       {/* 9. Newsletter */}
       <NewsletterSection

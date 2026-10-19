@@ -28,7 +28,6 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <span className="eyebrow mb-3 block">{siteContent.shop.eyebrow}</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#2C2520] font-serif-cormorant leading-tight mb-4">
             {siteContent.shop.title}
           </h2>
@@ -67,6 +66,26 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                             alt={product.title}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                             loading="lazy"
+                            referrerPolicy="no-referrer"
+                          />
+                        </a>
+                      ) : product.id === 'sablony-autori' ? (
+                        <a
+                          href="/sablony-pro-autory"
+                          onClick={(e) => {
+                            if (onNavigate) {
+                              e.preventDefault();
+                              onNavigate('/sablony-pro-autory');
+                            }
+                          }}
+                          className="block relative aspect-[16/10] rounded-[8px] overflow-hidden bg-[#EDE5D8]/60 shadow-[0_4px_16px_rgba(44,37,32,0.06)] group/img cursor-pointer"
+                        >
+                          <img
+                            src={product.image}
+                            alt={product.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                            loading="lazy"
+                            referrerPolicy="no-referrer"
                           />
                         </a>
                       ) : (
@@ -76,6 +95,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                             alt={product.title}
                             className="w-full h-full object-cover"
                             loading="lazy"
+                            referrerPolicy="no-referrer"
                           />
                         </div>
                       )

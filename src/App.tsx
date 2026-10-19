@@ -111,7 +111,12 @@ export default function App() {
 
   // Determine current active post or story
   const currentPost = activePostSlug
-    ? siteContent.blog.posts.find((p) => p.slug === activePostSlug) || siteContent.blog.posts[0]
+    ? siteContent.blog.posts.find(
+        (p) =>
+          p.slug === activePostSlug ||
+          (activePostSlug === 'psani-mezi-kojenim-a-uspavanim' &&
+            p.slug === 'psani-mezi-krmenim-a-uspavanim')
+      ) || siteContent.blog.posts[0]
     : null;
 
   const currentStory = activeStorySlug
@@ -187,11 +192,17 @@ export default function App() {
         )}
 
         {currentPath === '/obchodni-podminky' && (
-          <LegalTermsView onNavigateHome={() => navigateTo('/')} />
+          <LegalTermsView
+            onNavigateHome={() => navigateTo('/')}
+            onNavigate={(path) => navigateTo(path)}
+          />
         )}
 
         {currentPath === '/ochrana-osobnich-udaju' && (
-          <PrivacyPolicyView onNavigateHome={() => navigateTo('/')} />
+          <PrivacyPolicyView
+            onNavigateHome={() => navigateTo('/')}
+            onNavigate={(path) => navigateTo(path)}
+          />
         )}
       </div>
 

@@ -50,8 +50,9 @@ export interface BlogPostItem {
   title: string;
   excerpt: string;
   date: string;
+  image?: string;
   imagePlaceholder: string;
-  content: string;
+  content: string | string[];
 }
 
 export interface FaqItem {
@@ -88,10 +89,9 @@ export const siteContent = {
   navigation: [
     { label: 'Kniha', href: '#kniha' },
     { label: 'Pro tvůrce', href: '#pro-tvrce' },
-    { label: 'Povídky', href: '#povidky' },
     { label: 'Povídání', href: '#povidani' },
     { label: 'O mně', href: '#o-mne' },
-    { label: 'Kontakt', href: '#kontakt' },
+    { label: 'Odběr', href: '#kontakt' },
   ],
 
   // 1. HERO
@@ -229,6 +229,7 @@ export const siteContent = {
         status: 'available',
         buttonLabel: 'Chci šablony',
         buttonLink: '/sablony-pro-autory',
+        image: '/src/assets/images/author_templates_mockup_1792403344280.jpg',
         imagePlaceholder: 'Šablony pro autory',
       },
       {
@@ -236,7 +237,6 @@ export const siteContent = {
         title: 'Můj tvůrčí tým: Notion, Claude a Canva',
         shortDescription:
           'Jak si nastavit nástroje, které vám pomohou s psaním, plánováním i propagací. Abyste měli víc času na tvoření.',
-        price: '449 Kč',
         status: 'coming_soon',
         badge: 'Připravuji',
         badgePosition: 'left',
@@ -257,7 +257,7 @@ export const siteContent = {
       {
         question: 'Opravdu je zdarma?',
         answer:
-          'Ano. Jediné, co za něj chci, je váš e-mail, abych vám mohla poslat průvodce a občas i novinky.',
+          'Ano, samotný průvodce „Jak zvládnout předprodej knihy“ je zcela zdarma – jediné, co za něj chci, je váš e-mail, abych vám ho mohla poslat a občas se ozvat s novinkami. Ostatní doplňky a praktické materiály (jako je balíček hotových šablon pro autory) jsou již placené, protože obsahují desítky hotových podkladů a nástrojů, které vám ušetří týdny práce.',
       },
       {
         question: 'Jak produkt dostanu?',
@@ -287,7 +287,8 @@ export const siteContent = {
         'Všechno, co jsem při kampani na podporu vydání svého románu psala od nuly. Hotové, vyzkoušené a připravené k úpravě do tvého hlasu.',
       price: '349 Kč',
       buttonText: 'Chci šablony',
-      checkoutLink: 'https://form.simpleshop.cz/ODoJP/buy/',
+      checkoutLink: 'https://form.simpleshop.cz/ODq6j/buy/',
+      productUrl: 'https://form.simpleshop.cz/ODq6j/',
       sectionTitle: 'Co v balíčku najdeš',
       chapters: [
         {
@@ -433,14 +434,46 @@ export const siteContent = {
             icon: 'Calculator',
           },
           {
-            title: 'Šablony v Canvě',
+            title: 'Canva šablony',
             label: 'Canva · zdarma',
-            text: '7 hotových grafik, do kterých jen doplníš název knihy a své jméno: oznámení startu kampaně, literární citát, milník sbírky, odpočet do spuštění, Instagram Story s průběhem kampaně, poděkování po úspěšném konci a leták A6 na autorské čtení.',
+            text: '35 hotových grafik v 5 stylech – 7 témat pro celou kampaň: start, citát, milník, odpočet, poděkování, Instagram Story a leták A6. Stačí přepsat text a vložit vlastní fotky.',
             icon: 'Palette',
           },
         ],
         footerNote:
           'Notion, Google Tabulky i Canva šablony fungují v bezplatných verzích. Nepotřebuješ žádné placené předplatné.',
+      },
+      stylesSection: {
+        title: '5 stylů pro různé žánry',
+        styles: [
+          {
+            name: 'Krémová klasika',
+            description:
+              'klidný literární styl pro prózu, poezii a psychologický román',
+          },
+          {
+            name: 'Vínový archiv',
+            description:
+              'tmavá, archivní atmosféra pro thrillery, detektivky a historické romány',
+          },
+          {
+            name: 'Galerie',
+            description:
+              'čistá černobílá mřížka fotek pro současnou prózu a literaturu faktu',
+          },
+          {
+            name: 'Hravá',
+            description:
+              'ručně psané písmo a kresbičky pro dětské knihy, kuchařky a oddechovky',
+          },
+          {
+            name: 'Scrapbook',
+            description:
+              'koláž s fotkou a ručním písmem pro young adult, cestopisy a memoáry',
+          },
+        ],
+        footerNote:
+          'Každý styl obsahuje všech 7 témat: 5 příspěvků na Instagram (1080×1440), Story (1080×1920) a leták A6.',
       },
       whoIsItForTitle: 'Pro koho je',
       whoIsItForList: [
@@ -551,8 +584,49 @@ export const siteContent = {
         excerpt:
           'Co se děje mezi odesláním textu a chvílí, kdy kniha vyjde. Krok za krokem, bez přikrášlování.',
         date: '[datum]',
+        image: '/src/assets/images/manuscript_to_book_1792403703880.jpg',
         imagePlaceholder: '[Fotografie: Jak se z rukopisu stává kniha]',
-        content: '[Text článku]',
+        content: `
+Dlouho jsem si myslela, že nejtěžší část je dopsat poslední větu. Pak jsem ji dopsala, zavřela notebook a zjistila, že mám v ruce teprve rukopis. Ne knihu. Mezi těmi dvěma věcmi leží cesta, o které se moc nemluví, a tak ji zkusím popsat tak, jak jsem ji prožila já.
+
+1. Text musí odležet
+Hned po dopsání jsem byla přesvědčená, že je to buď to nejlepší, co jsem kdy napsala, nebo úplná hrůza. Obojí bylo stejně nespolehlivé. Pomohlo nechat rukopis pár týdnů ležet a vrátit se k němu s odstupem. Najednou jsem viděla věty, které se opakují, scény, které nikam nevedou, a místa, kde postavy říkají nahlas to, co by čtenář měl jen tušit.
+
+2. První čtenáři
+Pustit text k někomu jinému bylo jako ukázat deník. Jako první jsem rukopis ukázala tchyni, manželovi a kamarádce. Jejich reakce mi daly odvahu: najednou jsem věděla, že má smysl o vydání zabojovat a nenechat text ležet v šuplíku. Kromě povzbuzení mi dali i cenné rady. Všimli si věcí, které jsem kvůli autorské slepotě přehlížela, a některé jejich postřehy jsem do textu nakonec zapracovala. Naučila jsem se, že nemusím přijmout každou poznámku. Ale když na stejném místě zaváhají dva lidé nezávisle na sobě, je to signál, který se vyplatí brát vážně.
+
+3. Rozhodnutí, jakou cestou jít
+Klasické nakladatelství, nebo vlastní cesta? Já jsem zvolila Pointu – platformu, kde kniha vychází díky kampani na podporu vydání. Lákalo mě, že o knize nerozhoduje jen jeden redaktor v jedné kanceláři, ale lidé, kteří ji chtějí číst. Zároveň mě to vyděsilo, protože to znamenalo, že o své knize budu muset mluvit. (O tom víc v článku o kampani.)
+
+4. Kampaň
+Od 4. srpna do 3. září jsem měla měsíc na to, abych našla dost lidí, kteří knihu podpoří příspěvkem. Každý příspěvek je zároveň objednávka – kdo přispěje, dostane knihu, jakmile vyjde. Tenhle měsíc byl intenzivnější než leckteré měsíce psaní.
+
+5. Redakce
+Tady se z rukopisu začíná stávat kniha doopravdy. Redaktor nečte text jako kamarád, ale jako řemeslník. Ptá se, proč je tahle scéna tady, jestli tahle postava opravdu takhle mluví, jestli čtenář pochopí, co se stalo. Nejvíc mě překvapilo, jak často jsem končila kapitoly stejně: Anna si něco uvědomí, rozhodne se a tečka. Redaktorka mi ukázala, že když každá kapitola skončí ponaučením, čtenář nemá důvod otočit stránku. Kapitola, která skončí nejistotou, táhne dál. Podobně jsem nevědomky opakovala vzorec, kdy Anna něco pochopí a druhý se jí hned otevře. V životě to tak nefunguje a v knize to pak zní spíš jako terapie než jako příběh.
+
+Bolelo škrtat. Některé věty a celé odstavce, na které jsem byla pyšná, musely pryč. A ještě víc mě zaskočilo, když se ukázalo, že se mi v příběhu zamotala časová osa. Dopisy, na kterých celá kniha stojí, si místy odporovaly. Musela jsem si sednout a kapitolu po kapitole rozepsat, v jakém je to měsíci, kolik je Anně let a kde je v tu chvíli máma.
+
+Potěšilo mě, kolik dokáže udělat jediná věta. Postavy díky drobným úpravám dostaly víc hloubky: najednou je vidět, co se skrývá za tím, co říkají. A potěšilo mě i zjištění, že nemusím přijmout všechno. U několika míst jsem si svou verzi obhájila a nechala ji. Pochopila jsem, že redakce není o tom, že vám někdo přepíše knihu. Je to rozhovor, a poslední slovo má autor, pokud se rozhoduje vědomě.
+
+6. Korektura
+Korektor hledá to, co už autor nevidí: překlepy, čárky, nejednotné uvozovky, jméno, které se v jedné kapitole píše jinak. Myslela jsem, že svůj text znám nazpaměť. Právě proto v něm chyby nevidím – mozek si je sám opraví.
+
+7. Obálka a sazba
+Obálka je první věc, kterou čtenář uvidí, a poslední, kterou autor dokáže posoudit objektivně. U Mléčných zubů duše jsem chtěla, aby bylo cítit ticho šumavské chalupy a něco nedořečeného. První návrh vypadal úplně jinak. Na obálce byla krabice převázaná šňůrkou a za ni zastrčená větvička. Ta krabice měla připomínat místo, kde Anna najde mámin odkaz. Poslala jsem ho grafičce a pak jsem jí ho vracela znovu a znovu. Pokaždé mi něco nesedělo, a tak jsem chtěla posunout barvu, změnit detail nebo přidat něco navíc. Až po několika kolech mi došlo, že problém není v grafičce, problém byl v samotném návrhu. Snažila jsem se zachránit nápad, který jsem vlastně nechtěla.
+
+Tak jsem to celé překopala. Chtěla jsem obálku čistou, se spoustou prázdného prostoru, aby víc mlčela a víc tajila. Uprostřed teď stojí mléčný zub, kdysi rozbitý a znovu slepený zlatými nitkami. Inspirovala mě japonská technika kintsugi. Rozbitá keramika se při ní neopravuje tak, aby to nebylo poznat. Praskliny se naopak vyplní zlatem, takže zůstanou vidět a stanou se součástí příběhu té věci. Přesně o tom je i kniha: o tom, co se v nás zlomí, a o tom, že to můžeme poskládat zpátky. Ne jako nové, ale celé a silnější.
+
+Sazba pak rozhoduje o tom, jak se text čte – velikost písma, okraje, jak začíná nová scéna.
+
+8. Tisk a cesta ke čtenářům
+Pak už jen čekání. A pak krabice. Na tenhle okamžik zatím jen čekám. Kniha by měla vyjít na jaře, a já si tu chvíli už teď představuju úplně živě. Žádný kurýr. Pro své knihy si pojedu osobně do sídla Pointy. Tam na mě budou čekat krabice plné výtisků a já je budu jeden po druhém podepisovat. Než ale vezmu do ruky pero, otevřu první krabici a vytáhnu tu první: skutečnou, těžkou, s vůní tiskárny. Vím, že ji nejdřív jen chvíli podržím a nebudu ji otevírat. Pak ji nalistuju někde uprostřed a přečtu si větu, kterou znám nazpaměť. Bude ale vypadat jinak, protože už nebude v souboru v počítači. Bude na papíře, kde ji může přečíst kdokoli.
+
+Možná se rozbrečím. Možná se budu jen smát. Nejspíš obojí.
+
+Knihy se rozesílají těm, kdo kampaň podpořili, a teprve potom míří dál.
+
+Co bych řekla sobě na začátku
+Že dopsání rukopisu není konec, ale polovina. Že na téhle cestě budu potřebovat jiné lidi a že je v pořádku si o pomoc říct. A že kniha, která nakonec vznikne, už nebude jen moje, bude patřit i těm, kdo jí pomohli na svět.`,
       },
       {
         slug: 'kampan-ze-ktere-jsem-mela-strach',
@@ -560,17 +634,75 @@ export const siteContent = {
         excerpt:
           'Proč jsem se bála mluvit o vlastní knize a co mi nakonec pomohlo vydržet celý měsíc.',
         date: '[datum]',
+        image: '/src/assets/images/campaign_courage_notes_1792403705357.jpg',
         imagePlaceholder: '[Fotografie: Kampaň, ze které jsem měla strach]',
-        content: '[Text článku]',
+        content: `Psát mi nikdy nepřišlo těžké. **Těžké mi přišlo říct nahlas: Napsala jsem knihu a chtěla bych, abyste ji podpořili.** Když jsem se rozhodla vydat **Mléčné zuby duše** přes Pointu, věděla jsem, že bez kampaně to nepůjde. A přesto jsem ji v duchu odkládala, jak to šlo.
+
+## Čeho jsem se bála
+
+Nejvíc toho, že budu otravovat. Že lidi, kteří mě znají, budou mít pocit, že jim podstrkuju něco, o co nestojí. Bála jsem se, že to bude vypadat jako chlubení. A nejvíc ze všeho jsem se bála, že kampaň nevyjde a všichni to uvidí.
+
+*Je to vůbec dost dobré na to, abych o tom mluvila?*
+
+## Co mi pomohlo
+
+Změnit pohled na to, o co vlastně žádám. Nežádala jsem o almužnu. Příspěvek na kampaň není dar, je to objednávka knihy dopředu. Nabízela jsem příběh, do kterého jsem dala roky, a lidé se mohli svobodně rozhodnout, jestli o něj stojí. Ta změna slov mi pomohla víc, než bych čekala.
+
+Plán, abych nemusela každý den vše vymýšlet znovu. Obsah na Instagram jsem si rozvrhla dopředu. Když přišel den, kdy jsem neměla sílu nic vymýšlet, stačilo otevřít plán a udělat jednu věc. Ne deset. Jednu.
+
+Mluvit o příběhu, ne o sobě. Bylo pro mne mnohem snazší vyprávět o ženě, která se po smrti matky vrací na šumavskou chalupu a najde sedmnáct dopisů, než opakovat „kupte si mou knihu“. Lidé reagovali na otázky, na úryvky, na to, co se jich dotklo. Ne na reklamu.
+
+Lidé, kteří sdíleli. Každé sdílení znamenalo, že o knize se dozví někdo, koho bych sama nikdy neoslovila.
+
+Oslovit i ty, které neznám osobně. Psala jsem knihovnám, kulturním organizacím a neziskovkám, jejichž práce se tématu knihy dotýká. Ne všichni odpověděli. Ale ti, kdo ano, mi ukázali, že kniha má smysl i mimo okruh mých blízkých.
+
+Dovolit si špatné dny. Kampaň trvala celý měsíc – od 4. srpna do 3. září. Byly dny, kdy čísla stála, a já měla chuť všechno smazat. Naučila jsem se, že takový den neznamená konec. Znamená jen, že je potřeba si odpočinout a zítra udělat zase jednu věc.
+
+## Jak to dopadlo
+
+Kampaň vyšla. Cíl byl 117 700 Kč a nakonec se vybralo 124 785 Kč, tedy o něco víc, než bylo potřeba. Knihu podpořilo 170 lidí. Ještě v květnu, kdy jsem začínala s přípravami, bych tomu číslu nevěřila. Za každým z těch příspěvků je někdo, kdo si řekl, že tenhle příběh chce číst. Někoho z nich znám celý život, jiné jsem nikdy neviděla.
+
+Poslední den jsem pořád obnovovala stránku kampaně, i když jsem věděla, že se tím nic nezmění. Když kampaň skončila, necítila jsem žádný velký výbuch radosti. Spíš ticho a obrovskou úlevu, jako když po dlouhé cestě konečně položíte těžký batoh. Radost přišla až druhý den ráno, kdy mi došlo, že Mléčné zuby duše opravdu vyjdou.
+
+## Co bych vzkázala těm, kdo se bojí
+
+Strach z toho, že budete otravovat, často znamená, že vám na lidech kolem záleží. To je dobrý základ. Neprodáváte sebe, nabízíte příběh. Příběh, který jste psali s tím nejlepším úmyslem a dali do něj kus své duše. A lidé, pro které ten příběh je, si k němu cestu najdou – pokud jim dáte šanci se o něm dozvědět.`,
       },
       {
-        slug: 'psani-mezi-kojenim-a-uspavanim',
-        title: 'Psaní mezi kojením a uspáváním',
+        slug: 'psani-mezi-krmenim-a-uspavanim',
+        title: 'Psaní mezi krmením a uspáváním',
         excerpt:
           'Jak tvořit, když máte malé dítě a času je málo. A proč to nemusí být dokonalé.',
         date: '[datum]',
-        imagePlaceholder: '[Fotografie: Psaní mezi kojením a uspáváním]',
-        content: '[Text článku]',
+        image: '/src/assets/images/writing_motherhood_cozy_1792403704835.jpg',
+        imagePlaceholder: '[Fotografie: Psaní mezi krmením a uspáváním]',
+        content: `Představa spisovatelky, která ráno usedne s kávou k psacímu stolu a do oběda napíše kapitolu, mi teď připadá skoro jako pohádka. Moje psaní posledních pár měsíců vypadá jinak: věta v telefonu během krmení, odstavec, když dcera konečně usne, a poznámka na papírku, protože mě nápad napadl uprostřed vaření.
+
+**Čas se nenajde, čas se posbírá.**
+
+Čekala jsem, až budu mít volné odpoledne. To nepřišlo. Pak jsem pochopila, že čas na psaní nedostanu v celku, musím ho posbírat po kouscích. Deset minut tady, dvacet tam. Zní to málo, ale deset minut denně je za měsíc pět hodin.
+
+## Co mi pomáhá
+
+Poznámky v telefonu. Při kojení nebo uspávání mám často jednu ruku volnou a hlavu plnou myšlenek. Píšu si útržky, dialogy, nápady. Ne všechno se hodí, ale mnohé z toho jsem později použila.
+
+Vědět, co budu psát, ještě než začnu. Když mám jen chvilku, nemůžu ji promarnit tím, že budu koukat do prázdné stránky. Přemýšlím během dne, při procházce s kočárkem, při mytí nádobí a ke klávesnici si sedám s hotovou myšlenkou.
+
+Nenavazovat tam, kde jsem skončila, ale tam, kde to jde. Nemusím psát popořadě. Když nemám sílu na těžkou scénu, napíšu tu lehčí. Kniha se pak skládá jako puzzle.
+
+Odpustit si dny, kdy to nejde. Noc s nemocným dítětem, den, kdy nemám ani na sprchu. Tehdy nepíšu a nevyčítám si to. Psaní počká. Dítě ne.
+
+## Proč to nemusí být dokonalé
+
+Dřív jsem měla potřebu, aby každá věta byla hotová hned. Teď vím, že první verze je od toho, aby existovala. Uhlazovat se dá později.
+
+Nedokonalý odstavec napsaný během odpoledního spánku je pořád víc než dokonalý odstavec, který zůstal jen v hlavě.
+
+A ještě jedna věc: mateřství mi psaní nevzalo, jen ho změnilo. Některé věci jsem o vztahu matky a dcery pochopila až ve chvíli, kdy jsem se matkou stala sama.
+
+## Pro všechny, kdo tvoří s malými dětmi
+
+Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy právě pomalu.`,
       },
     ] as BlogPostItem[],
   },
@@ -579,7 +711,7 @@ export const siteContent = {
   about: {
     eyebrow: 'O mně',
     title: 'Kdo za tím stojí',
-    photoPlaceholder: '[Portrét autorky]',
+    photoPlaceholder: '/src/assets/images/hf_20261010_130722_911f379c-6ca6-437d-98c0-f76ede0bbdf7.png',
     paragraph1:
       'Jmenuji se Dominika a jsem máma, introvertka a autorka projektu Duše na papíře. Dlouho jsem pracovala s čísly a návrhy, než jsem našla svůj opravdový domov v psaní a tvoření.',
     paragraph2:
@@ -678,11 +810,145 @@ export const siteContent = {
   legalPages: {
     terms: {
       title: 'Obchodní podmínky',
-      body: '[Text bude doplněn]',
+      subtitle:
+        'Obchodní podmínky pro prodej digitálního obsahu prostřednictvím webu dusenapapire.cz a objednávkového systému SimpleShop. Platné od 01.10.2026.',
+      effectiveDate: '01.10.2026',
+      body: `Obchodní podmínky pro prodej digitálního obsahu prostřednictvím webu dusenapapire.cz a objednávkového systému SimpleShop. Platné od 01.10.2026.
+
+## 1. Úvodní ustanovení
+1. Tyto obchodní podmínky upravují práva a povinnosti mezi prodávající a kupujícím při koupi digitálního obsahu (dále jen „produkt“).
+2. **Prodávající:** Dominika Černíková, IČO 05603005, místo podnikání Tylova 1890, 27201 Kladno, fyzická osoba zapsaná v živnostenském rejstříku. Nejsem plátce DPH. Kontakt: cernikova.dom@gmail.com, web: dusenapapire.cz.
+3. Kupující může být spotřebitel, nebo podnikatel. Ustanovení na ochranu spotřebitele se použijí jen na kupující, kteří jsou spotřebiteli.
+4. Právní vztahy neupravené těmito podmínkami se řídí zákonem č. 89/2012 Sb., občanským zákoníkem, a zákonem č. 634/1992 Sb., o ochraně spotřebitele.
+
+## 2. Produkt
+1. Produktem je digitální obsah, který není dodáván na hmotném nosiči: **balíček Šablony pro autory**. Tvoří ho dokument se šablonami textů, pracovní šablona v Notionu, kalkulačka v Google Tabulkách a šablony v Canvě. Přesný obsah je uveden na prodejní stránce produktu.
+2. K použití produktu kupující potřebuje připojení k internetu a bezplatné účty ve službách Notion, Google a Canva. Prvky označené v Canvě korunkou jsou dostupné jen v placené verzi Canva Pro a lze je nahradit bezplatnou alternativou.
+3. Prodávající neodpovídá za změny, výpadky nebo cenu služeb třetích stran (Notion, Google, Canva).
+4. Produkt obsahuje doporučení a vzory založené na zkušenosti prodávající. Prodávající nezaručuje konkrétní výsledek kampaně ani výši vybrané částky. Informace o daních, darech a fakturaci v produktu jsou obecné a nenahrazují právní ani daňové poradenství.
+
+## 3. Objednávka a uzavření smlouvy
+1. Prezentace produktu na webu je výzvou k podání návrhu na uzavření smlouvy.
+2. Kupující objednává vyplněním objednávkového formuláře v systému SimpleShop. Před odesláním může údaje zkontrolovat a opravit.
+3. Smlouva je uzavřena odesláním objednávky kupujícím a jejím potvrzením ze strany prodávající na e-mailovou adresu zadanou v objednávce.
+4. Kupující souhlasí s použitím prostředků komunikace na dálku při uzavírání smlouvy. Náklady vzniklé kupujícímu při použití komunikačních prostředků na dálku (náklady na internetové připojení apod.) si hradí kupující sám.
+5. Údaje uvedené kupujícím v objednávce jsou prodávající považovány za správné.
+
+## 4. Cena a platební podmínky
+1. Cena produktu je uvedena na prodejní stránce a v objednávkovém formuláři. Prodávající není plátce DPH, cena je konečná.
+2. Platbu kupní ceny je možné provést bezhotovostně prostřednictvím zabezpečené online platební brány integrované v objednávkovém systému SimpleShop (online platební kartou nebo rychlým online bankovním převodem).
+3. Kupní cena je splatná bezprostředně při dokončení objednávky. Závazek kupujícího uhradit kupní cenu je splněn okamžikem připsání částky na účet prodávající.
+4. Po přijetí platby vystaví prodávající kupujícímu daňový doklad (fakturu) v elektronické podobě a zašle jej na e-mailovou adresu kupujícího.
+
+## 5. Dodání digitálního obsahu
+1. Digitální obsah je dodán výhradně elektronickou cestou bezprostředně po zaplacení kupní ceny, a to zasláním e-mailu s unikátními přístupovými odkazy k šablonám a dokumentům (šablona v Notionu, odkaz na Google Tabulky, šablony v Canvě a průvodní materiály).
+2. Digitální obsah není dodáván na hmotném nosiči (CD/DVD, USB disk apod.).
+3. Kupující je povinen si dodané podklady zkopírovat či uložit do svých vlastních účtů ve službách Notion, Google a Canva bez zbytečného odkladu.
+
+## 6. Odstoupení od smlouvy
+1. V souladu s ustanovením § 1837 písm. l) občanského zákoníku kupující – spotřebitel nemá právo odstoupit od smlouvy o dodání digitálního obsahu, pokud nebyl dodán na hmotném nosiči a byl dodán s předchozím výslovným souhlasem spotřebitele před uplynutím lhůty pro odstoupení od smlouvy a prodávající před uzavřením smlouvy sdělila spotřebiteli, že v takovém případě nemá právo na odstoupení od smlouvy.
+2. Odesláním objednávky a zaškrtnutím příslušného souhlasu v objednávkovém formuláři kupující výslovně souhlasí se započetím plnění (zpřístupněním digitálního obsahu) před uplynutím 14denní zákonné lhůty pro odstoupení od smlouvy a bere na vědomí, že tímto krokem jeho právo na odstoupení od smlouvy bez udání důvodu zaniká.
+
+## 7. Práva z vadného plnění (reklamace)
+1. Práva a povinnosti stran ohledně práv z vadného plnění se řídí příslušnými právními předpisy (zejména § 1914 až 1925, § 2099 až 2117 a § 2389a až 2389s občanského zákoníku a zákonem č. 634/1992 Sb., o ochraně spotřebitele).
+2. Prodávající odpovídá kupujícímu za to, že digitální obsah při zpřístupnění odpovídá ujednanému popisu, je funkční a bez vad.
+3. V případě technického problému, nefunkčního odkazu nebo chyby v souborech uplatní kupující reklamaci e-mailem na adresu cernikova.dom@gmail.com s popisem vady.
+4. Prodávající rozhodne o reklamaci bezodkladně, nejpozději do 30 kalendářních dnů od jejího uplatnění. V případě oprávněné reklamace prodávající zajistí nápravu bez zbytečného odkladu (např. dodáním nového funkčního odkazu).
+
+## 8. Autorská práva a licence
+1. Veškerý obsah balíčku Šablony pro autory (včetně struktury, textových vzorů, Notion šablon, tabulek a grafických šablon v Canvě) je autorským dílem Dominiky Černíkové a podléhá ochraně podle zákona č. 121/2000 Sb., autorského zákona.
+2. Zakoupením produktu získává kupující nevýhradní, nepřenosnou licenci k osobnímu a internímu užití pro účely přípravy své vlastní autorské knihy nebo kampaně.
+3. Kupující není oprávněn produkt ani jakoukoli jeho část přeprodávat, bezplatně šířit, sdílet s třetími osobami, kopírovat pro komerční účely ani veřejně zpřístupňovat bez předchozího písemného souhlasu prodávající.
+
+## 9. Mimosoudní řešení spotřebitelských sporů
+1. K mimosoudnímu řešení spotřebitelských sporů z kupní smlouvy je příslušná Česká obchodní inspekce, se sídlem Štěpánská 567/15, 120 00 Praha 2, IČO: 000 20 869, internetová adresa: https://adr.coi.cz.
+2. Spotřebitel může pro řešení sporů online využít také platformu Evropské komise na adrese http://ec.europa.eu/consumers/odr.
+3. Evropské spotřebitelské centrum Česká republika, se sídlem Štěpánská 567/15, 120 00 Praha 2, internetová adresa: http://www.evropskyspotrebitel.cz je kontaktním místem podle nařízení Evropského parlamentu a Rady (EU) č. 524/2013 o řešení spotřebitelských sporů on-line.
+
+## 10. Závěrečná ustanovení
+1. Veškeré právní vztahy vznikající na základě nebo v souvislosti se smlouvou se řídí právním řádem České republiky.
+2. Smlouva se uzavírá v českém jazyce.
+3. Prodávající je oprávněna tyto obchodní podmínky měnit či doplňovat. Změna se nedotýká smluv uzavřených před účinností nové verze.
+4. Tyto obchodní podmínky jsou platné a účinné od 01.10.2026.`,
     },
     privacy: {
       title: 'Zásady ochrany osobních údajů',
-      body: '[Text bude doplněn]',
+      subtitle:
+        'Informace o zpracování a ochraně osobních údajů podle Nařízení Evropského parlamentu a Rady (EU) 2016/679 (GDPR). Platné od 01.10.2026.',
+      effectiveDate: '01.10.2026',
+      body: `Zásady ochrany osobních údajů pro web dusenapapire.cz a prodej digitálního obsahu prostřednictvím systému SimpleShop. Platné od 01.10.2026.
+
+## 1. Správce osobních údajů
+1. Správcem vašich osobních údajů je **Dominika Černíková**, IČO 05603005, místo podnikání Tylova 1890, 27201 Kladno, fyzická osoba zapsaná v živnostenském rejstříku. Nejsem plátce DPH.
+2. **Kontaktní údaje:**
+   - E-mail: cernikova.dom@gmail.com
+   - Webové stránky: dusenapapire.cz
+   - Instagram: @mlecnezubyduse
+3. Jako správce určuji, jakým způsobem a za jakým účelem budou osobní údaje zpracovávány, a zodpovídám za jejich řádné zabezpečení v souladu s Nařízením Evropského parlamentu a Rady (EU) 2016/679 (GDPR) a zákonem č. 110/2019 Sb., o zpracování osobních údajů.
+
+## 2. Jaké osobní údaje zpracovávám a proč (Účely zpracování)
+
+### A. Odběr newsletteru a dárky ke stažení zdarma
+- **Rozsah údajů:** Křestní jméno, e-mailová adresa, vybraný dárek na uvítanou (první kapitola knihy Mléčné zuby duše nebo průvodce Jak zvládnout předprodej knihy).
+- **Právní základ:** Váš dobrovolný a výslovný souhlas podle čl. 6 odst. 1 písm. a) GDPR.
+- **Účel:** Doručení vybraného dárku do vaší e-mailové schránky a následné zasílání občasného newsletteru s novinkami, články o psaní, informacemi o chystaných knihách a inspirací k tvorbě z projektu Duše na papíře.
+- **Jak se odhlásit:** Svůj souhlas můžete kdykoli odvolat jedním kliknutím na odhlašovací odkaz v zápatí každého doručeného e-mailu.
+
+### B. Prodej digitálního obsahu (balíček Šablony pro autory)
+- **Rozsah údajů:** Jméno, příjmení, e-mailová adresa, fakturační adresa, u podnikatelů IČO a případně DIČ, informace o zakoupeném produktu a stavu platby.
+- **Právní základ:**
+  - Plnění kupní smlouvy podle čl. 6 odst. 1 písm. b) GDPR (doručení přístupu k obsahu, technická podpora, komunikace k objednávce).
+  - Splnění právní povinnosti podle čl. 6 odst. 1 písm. c) GDPR (vedení účetní a daňové evidence podle zákona o účetnictví a daňového řádu).
+- **Účel:** Zpracování objednávky, vystavení faktury, doručení přístupových odkazů a evidence plateb.
+
+### C. Komunikace a dotazy
+- **Rozsah údajů:** Jméno, e-mailová adresa a obsah vaší zprávy (prostřednictvím e-mailu či dotazu).
+- **Právní základ:** Oprávněný zájem správce na vyřízení vašeho dotazu nebo žádosti podle čl. 6 odst. 1 písm. f) GDPR.
+- **Účel:** Zodpovězení dotazu a navazující komunikace.
+
+## 3. Doba uchovávání osobních údajů
+- **Údaje pro zasílání newsletteru:** Zpracovávám po dobu trvání vašeho souhlasu, maximálně však po dobu 5 let, nebo do chvíle, kdy se z odběru odhlásíte.
+- **Údaje spojené s nákupem a daňové doklady:** Uchovávám po dobu vyžadovanou platnými právními předpisy (zpravidla 10 let od konce zdaňovacího období).
+- **E-mailová komunikace k dotazům:** Uchovávám po dobu nezbytnou pro vyřešení dotazu, nejdéle 12 měsíců od ukončení komunikace.
+
+## 4. Kdo má k vašim údajům přístup (Příjemci a zpracovatelé)
+Vaše osobní údaje neprodávám ani neposkytuji třetím stranám pro marketingové účely. Pro zajištění provozu webu, prodeje a rozesílky využívám prověřené zpracovatele:
+- **SimpleShop (společnost Redbit s.r.o.):** Poskytovatel prodejního formuláře, automatizace objednávek a fakturačního systému.
+- **Poskytovatel platebních služeb:** Bezpečné platební brány pro bezhotovostní platby integrované v SimpleShopu.
+- **Google Workspace (Google Ireland Ltd.):** E-mailová schránka a cloudové úložiště.
+- **Poskytovatel e-mailingu:** Služba pro hromadné zasílání e-mailů s dárky a newslettery splňující podmínky GDPR.
+- **Poskytovatel webhostingu:** Provoz serverové infrastruktury webu dusenapapire.cz.
+
+Všechna data jsou zpracovávána na území Evropské unie nebo v souladu s mechanismy zaručujícími odpovídající úroveň ochrany osobních údajů.
+
+## 5. Vaše práva podle GDPR
+Jako subjekt údajů máte podle GDPR následující práva:
+1. **Právo na přístup:** Právo vědět, jaké vaše osobní údaje zpracovávám, za jakým účelem a po jakou dobu.
+2. **Právo na opravu:** Právo na opravu nepřesných nebo doplnění neúplných osobních údajů.
+3. **Právo na výmaz („právo být zapomenut“):** Právo požadovat smazání vašich údajů, pokud pominul účel jejich zpracování nebo jste odvolali souhlas a neexistuje jiný právní důvod (např. zákonná povinnost archivace faktur).
+4. **Právo na omezení zpracování:** V případech stanovených čl. 18 GDPR.
+5. **Právo na přenositelnost údajů:** Právo získat své údaje ve strukturovaném, běžně používaném formátu.
+6. **Právo vznést námitku:** Proti zpracování založenému na oprávněném zájmu správce.
+7. **Právo odvolat souhlas:** Kdykoli, jednoduše a bez jakýchkoli poplatků (e-mailem nebo odkazem v newsletteru).
+8. **Právo podat stížnost:** Máte právo podat stížnost u dozorového úřadu, kterým je **Úřad pro ochranu osobních údajů (ÚOOÚ)**, Pplk. Sochora 27, 170 00 Praha 7, web: https://uoou.gov.cz.
+
+Pro uplatnění jakéhokoli z výše uvedených práv mě můžete kontaktovat na e-mailu: cernikova.dom@gmail.com.
+
+## 6. Zabezpečení osobních údajů
+1. Osobní údaje jsou chráněny v maximální možné míře pomocí moderních technologií odpovídajících stupni technického rozvoje.
+2. Veškerá komunikace na webu dusenapapire.cz i v objednávkovém formuláři probíhá přes zabezpečený protokol HTTPS (šifrování SSL/TLS).
+3. Přístup k údajům je zabezpečen silnými hesly a dvoufázovým ověřováním.
+
+## 7. Soubory cookies
+1. Web **dusenapapire.cz** využívá soubory cookies – malé textové soubory ukládané do vašeho prohlížeče.
+2. **Nezbytné (technické) cookies:** Tyto soubory jsou nezbytné pro zajištění základní funkčnosti webových stránek, navigace a bezpečného průběhu objednávky. K jejich použití není podle zákona vyžadován váš souhlas.
+3. **Analytické a preferenční cookies:** Pomáhají mi anonymně sledovat návštěvnost a pochopit, co vás na webu zajímá. Tyto cookies jsou ukládány **výhradně na základě vašeho dobrovolného souhlasu**, který udělujete v cookie liště.
+4. **Správa a odvolání souhlasu:** Své nastavení cookies můžete kdykoli jednoduše změnit nebo souhlas odvolat kliknutím na odkaz „Cookies“ v zápatí každé stránky.
+
+## 8. Změny zásad
+Zásady mohu v případě potřeby aktualizovat (například při změně legislativy nebo rozšíření nabídky služeb). Aktuální znění najdete vždy na této adrese: [https://dusenapapire.cz/ochrana-osobnich-udaju](/ochrana-osobnich-udaju).
+
+Tyto zásady jsou platné a účinné od **01.10.2026**.`,
     },
   },
 };

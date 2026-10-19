@@ -60,6 +60,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 export const TemplatesView: React.FC<TemplatesViewProps> = ({
   onNavigateHome,
   onNavigate,
+  onNavigatePrivacy,
+  onNavigateTerms,
 }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -69,7 +71,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
 
   const detail = siteContent.shop.templatesDetail;
   const checkoutLink =
-    detail.checkoutLink || 'https://form.simpleshop.cz/ODoJP/buy/';
+    detail.checkoutLink || 'https://form.simpleshop.cz/ODq6j/buy/';
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -85,7 +87,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
   return (
     <div className="bg-[#FAF8F5] min-h-screen text-[#2C2520]">
       {/* Top Breadcrumb / Return Navigation */}
-      <div className="max-w-4xl mx-auto px-6 pt-10 sm:pt-14 pb-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-4">
         <button
           onClick={onNavigateHome}
           className="inline-flex items-center text-sm font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] transition-colors cursor-pointer group"
@@ -97,41 +99,56 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
       </div>
 
       {/* Hero / Header Section */}
-      <header className="max-w-4xl mx-auto px-6 pt-4 pb-12 sm:pb-16">
-        <div className="max-w-3xl">
-          <span className="eyebrow mb-4 block">Pro tvůrce</span>
-          <h1 className="font-serif-cormorant text-4xl sm:text-5xl md:text-6xl font-light text-[#2C2520] leading-[1.12] mb-6">
-            {detail.headline}
-          </h1>
-          <p className="font-sans-jost text-lg sm:text-xl text-[#2C2520]/80 leading-relaxed mb-8">
-            {detail.subheadline}
-          </p>
+      <header className="max-w-4xl mx-auto px-4 sm:px-6 pt-4 pb-12 sm:pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
+          <div className={product?.image ? "md:col-span-7" : "max-w-3xl"}>
+            <h1 className="font-serif-cormorant text-4xl sm:text-5xl md:text-6xl font-light text-[#2C2520] leading-[1.12] mb-6">
+              {detail.headline}
+            </h1>
+            <p className="font-sans-jost text-lg sm:text-xl text-[#2C2520]/80 leading-relaxed mb-8">
+              {detail.subheadline}
+            </p>
 
-          <div className="flex flex-wrap items-center gap-5 sm:gap-6">
-            <span className="font-serif-cormorant text-3xl sm:text-4xl font-light text-[#2C2520]">
-              {detail.price}
-            </span>
+            <div className="flex flex-wrap items-center gap-5 sm:gap-6">
+              <span className="font-serif-cormorant text-3xl sm:text-4xl font-light text-[#2C2520]">
+                {detail.price}
+              </span>
 
-            <a
-              href={checkoutLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2 cursor-pointer shadow-sm !py-3 !px-8 text-sm"
-            >
-              <ShoppingBag className="w-4 h-4" />
-              <span>{detail.buttonText}</span>
-            </a>
+              <a
+                href={checkoutLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-2 cursor-pointer shadow-sm !py-3 !px-8 text-sm"
+              >
+                <ShoppingBag className="w-4 h-4" />
+                <span>{detail.buttonText}</span>
+              </a>
+            </div>
           </div>
+
+          {product?.image && (
+            <div className="md:col-span-5 flex justify-center">
+              <div className="w-full max-w-[380px] rounded-[10px] overflow-hidden shadow-[0_16px_36px_rgba(44,37,32,0.1)] bg-[#EDE5D8]/50 transition-transform duration-500 hover:-translate-y-1">
+                <img
+                  src={product.image}
+                  alt={detail.headline}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </header>
 
       {/* Subtle Atmospheric Divider */}
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="h-px bg-gradient-to-r from-transparent via-[#D9C9B8]/50 to-transparent" />
       </div>
 
       {/* Main Content Area */}
-      <main className="max-w-4xl mx-auto px-6 py-12 sm:py-16 space-y-16 sm:space-y-24">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16 sm:space-y-24">
         {/* Section: Co v balíčku najdeš */}
         <section className="space-y-12">
           <div>
@@ -231,7 +248,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
                   </p>
                 </div>
 
-                {/* 4. Šablony v Canvě */}
+                {/* 4. Canva šablony */}
                 <div className="bg-[#EDE5D8] border border-[#D9C9B8] rounded-[10px] p-6 sm:p-7 h-full flex flex-col">
                   <div className="flex items-center gap-2.5 mb-3">
                     <Palette className="w-5 h-5 text-[#2C2520] stroke-[1.5] shrink-0" />
@@ -240,10 +257,10 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
                     </span>
                   </div>
                   <h4 className="font-serif-cormorant text-2xl font-light text-[#2C2520] mb-3 leading-snug">
-                    Šablony v Canvě
+                    Canva šablony
                   </h4>
                   <p className="font-sans-jost text-sm text-[#2C2520] leading-relaxed">
-                    7 hotových grafik, do kterých jen doplníš název knihy a své jméno: oznámení startu kampaně, literární citát, milník sbírky, odpočet do spuštění, Instagram Story s průběhem kampaně, poděkování po úspěšném konci a leták A6 na autorské čtení.
+                    35 hotových grafik v 5 stylech – 7 témat pro celou kampaň: start, citát, milník, odpočet, poděkování, Instagram Story a leták A6. Stačí přepsat text a vložit vlastní fotky.
                   </p>
                 </div>
               </div>
@@ -251,6 +268,35 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
               {/* Informační řádek pod mřížkou */}
               <p className="text-xs sm:text-sm font-sans-jost text-[#8C7B6B] pt-2">
                 Notion, Google Tabulky i Canva šablony fungují v bezplatných verzích. Nepotřebuješ žádné placené předplatné.
+              </p>
+            </div>
+
+            {/* Subsection: 5 stylů pro různé žánry */}
+            <div className="space-y-6 pt-6">
+              <h3 className="font-serif-cormorant text-2xl sm:text-3xl font-light text-[#2C2520]">
+                {detail.stylesSection.title}
+              </h3>
+
+              {/* 5 malých karet – desktop: 5 v řadě (nebo 3+2 na menším desktopu/tabletu), mobil: 1 sloupec, plná šířka se 16px bočním odsazením */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {detail.stylesSection.styles.map((style, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-[#EDE5D8] border border-[#D9C9B8] rounded-[10px] p-5 h-full flex flex-col justify-start"
+                  >
+                    <h4 className="font-serif-cormorant text-xl font-normal text-[#2C2520] mb-2 leading-snug">
+                      {style.name}
+                    </h4>
+                    <p className="font-sans-jost text-xs sm:text-[13px] text-[#2C2520]/85 leading-relaxed">
+                      {style.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Malý řádek v barvě taupe (#8C7B6B) pod kartami */}
+              <p className="text-xs sm:text-sm font-sans-jost text-[#8C7B6B] pt-1">
+                {detail.stylesSection.footerNote}
               </p>
             </div>
           </div>
@@ -373,6 +419,27 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
               >
                 {detail.finalCta.belowText}
               </a>
+            </div>
+
+            {/* Legal reassurance notice */}
+            <div className="mt-6 pt-4 border-t border-[#D9C9B8]/50 text-xs font-sans-jost text-[#8C7B6B] leading-relaxed">
+              <span>Platba probíhá zabezpečeně přes SimpleShop. Před nákupem si můžete prostudovat </span>
+              <button
+                type="button"
+                onClick={() => onNavigateTerms?.()}
+                className="underline hover:text-[#2C2520] transition-colors cursor-pointer"
+              >
+                obchodní podmínky
+              </button>
+              <span> a </span>
+              <button
+                type="button"
+                onClick={() => onNavigatePrivacy?.()}
+                className="underline hover:text-[#2C2520] transition-colors cursor-pointer"
+              >
+                zásady ochrany osobních údajů
+              </button>
+              <span>.</span>
             </div>
           </div>
         </section>
