@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ChevronDown, Check, Bell, ShoppingBag, Info, X, ExternalLink, Download } from 'lucide-react';
 import { siteContent, ProductItem } from '../content';
 import { PlaceholderFrame } from './PlaceholderFrame';
-import { FreeGuideModal } from './FreeGuideModal';
 
 interface CreatorShopProps {
   onScrollToNewsletter: () => void;
@@ -17,7 +16,6 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
 }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [detailProduct, setDetailProduct] = useState<ProductItem | null>(null);
-  const [isFreeGuideModalOpen, setIsFreeGuideModalOpen] = useState(false);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -36,7 +34,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
           </p>
         </div>
 
-        {/* 3 Product Cards Grid – volné přechody, žádné ohraničující rámečky */}
+        {/* 3 Product Cards Grid â€“ volnĂ© pĹ™echody, ĹľĂˇdnĂ© ohraniÄŤujĂ­cĂ­ rĂˇmeÄŤky */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 md:mb-28">
           {siteContent.shop.products.map((product) => {
             const isComingSoon = product.status === 'coming_soon';
@@ -127,7 +125,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                     {product.shortDescription}
                   </p>
 
-                  {/* "Více" link for products with detailed long description */}
+                  {/* "VĂ­ce" link for products with detailed long description */}
                   {product.longDescription && (
                     product.id === 'kampan-pointa' ? (
                       <a
@@ -141,7 +139,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                         className="inline-flex items-center text-xs font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] mb-4 cursor-pointer underline underline-offset-4 decoration-[#D9C9B8]"
                       >
                         <Info className="w-3.5 h-3.5 mr-1" />
-                        <span>Více informací o průvodci</span>
+                        <span>VĂ­ce informacĂ­ o prĹŻvodci</span>
                       </a>
                     ) : product.id === 'sablony-autori' ? (
                       <a
@@ -155,7 +153,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                         className="inline-flex items-center text-xs font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] mb-4 cursor-pointer underline underline-offset-4 decoration-[#D9C9B8]"
                       >
                         <Info className="w-3.5 h-3.5 mr-1" />
-                        <span>Více informací o šablonách</span>
+                        <span>VĂ­ce informacĂ­ o ĹˇablonĂˇch</span>
                       </a>
                     ) : (
                       <button
@@ -163,7 +161,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                         className="inline-flex items-center text-xs font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] mb-4 cursor-pointer underline underline-offset-4 decoration-[#D9C9B8]"
                       >
                         <Info className="w-3.5 h-3.5 mr-1" />
-                        <span>Více informací</span>
+                        <span>VĂ­ce informacĂ­</span>
                       </button>
                     )
                   )}
@@ -193,14 +191,15 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                       <span>{product.buttonLabel}</span>
                     </button>
                   ) : product.id === 'kampan-pointa' ? (
-                    <button
-                      type="button"
-                      onClick={() => setIsFreeGuideModalOpen(true)}
+                    <a
+                      href={product.buttonLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="btn-primary !py-2 !px-4 !text-xs group inline-flex items-center cursor-pointer"
                     >
                       <Download className="w-3.5 h-3.5 mr-1.5" />
-                      <span>Stáhnout</span>
-                    </button>
+                      <span>StĂˇhnout</span>
+                    </a>
                   ) : product.id === 'sablony-autori' ? (
                     <a
                       href="/sablony-pro-autory"
@@ -238,7 +237,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
           })}
         </div>
 
-        {/* Pro koho to je Section – volně v prostoru, bez rámečku */}
+        {/* Pro koho to je Section â€“ volnÄ› v prostoru, bez rĂˇmeÄŤku */}
         <div className="bg-[#FAF8F5]/85 rounded-[10px] p-8 sm:p-12 mb-16 md:mb-20 shadow-[0_4px_24px_rgba(44,37,32,0.02)]">
           <div className="max-w-3xl mx-auto">
             <h3 className="font-serif-cormorant text-2xl sm:text-3xl font-light text-[#2C2520] mb-6 text-center">
@@ -260,7 +259,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
           </div>
         </div>
 
-        {/* FAQ Accordion – čistý otevřený seznam bez krabiček a rámečků */}
+        {/* FAQ Accordion â€“ ÄŤistĂ˝ otevĹ™enĂ˝ seznam bez krabiÄŤek a rĂˇmeÄŤkĹŻ */}
         <div className="max-w-3xl mx-auto">
           <h3 className="font-serif-cormorant text-2xl sm:text-3xl font-light text-[#2C2520] mb-8 text-center">
             {siteContent.shop.faqTitle}
@@ -291,14 +290,14 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                     <div className="px-2 pb-5 pt-1 text-sm text-[#2C2520]/80 leading-relaxed font-sans-jost">
                       {faq.isEmailAnswer ? (
                         <p>
-                          Napište mi na{' '}
+                          NapiĹˇte mi na{' '}
                           <a
                             href={`mailto:${siteContent.meta.email}`}
                             className="underline underline-offset-2 hover:text-[#2C2520] text-[#2C2520] font-medium"
                           >
                             {siteContent.meta.email}
                           </a>
-                          , ráda odpovím.
+                          , rĂˇda odpovĂ­m.
                         </p>
                       ) : (
                         <p>{faq.answer}</p>
@@ -323,7 +322,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
             <button
               onClick={() => setDetailProduct(null)}
               className="absolute top-5 right-5 p-1.5 rounded text-[#2C2520] hover:text-[#8C7B6B] hover:bg-[#EDE5D8] cursor-pointer"
-              aria-label="Zavřít detail"
+              aria-label="ZavĹ™Ă­t detail"
             >
               <X className="w-5 h-5 stroke-[1.5]" />
             </button>
@@ -360,7 +359,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                     className="inline-flex items-center text-xs font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] underline underline-offset-4 decoration-[#D9C9B8]"
                   >
                     <Info className="w-3.5 h-3.5 mr-1" />
-                    <span>Přejít na celou podstránku o šablonách</span>
+                    <span>PĹ™ejĂ­t na celou podstrĂˇnku o ĹˇablonĂˇch</span>
                   </a>
                 </div>
               )}
@@ -371,21 +370,21 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                 onClick={() => setDetailProduct(null)}
                 className="btn-secondary !text-xs !py-2"
               >
-                Zavřít
+                ZavĹ™Ă­t
               </button>
 
               {detailProduct.status === 'available' ? (
                 detailProduct.id === 'kampan-pointa' ? (
-                  <button
-                    onClick={() => {
-                      setDetailProduct(null);
-                      setIsFreeGuideModalOpen(true);
-                    }}
+                  <a
+                    href={detailProduct.buttonLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setDetailProduct(null)}
                     className="btn-primary !text-xs !py-2 inline-flex items-center cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5 mr-1.5" />
-                    <span>Stáhnout</span>
-                  </button>
+                    <span>StĂˇhnout</span>
+                  </a>
                 ) : (
                   <a
                     href={detailProduct.buttonLink || '#'}
@@ -409,7 +408,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                   className="btn-primary !text-xs !py-2 inline-flex items-center"
                 >
                   <Bell className="w-3.5 h-3.5 mr-1.5" />
-                  <span>Dát mi vědět</span>
+                  <span>DĂˇt mi vÄ›dÄ›t</span>
                 </button>
               )}
             </div>
@@ -417,12 +416,6 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
         </div>
       )}
 
-      {/* Free Guide Modal */}
-      <FreeGuideModal
-        isOpen={isFreeGuideModalOpen}
-        onClose={() => setIsFreeGuideModalOpen(false)}
-        onNavigatePrivacy={onNavigatePrivacy}
-      />
     </section>
   );
 };

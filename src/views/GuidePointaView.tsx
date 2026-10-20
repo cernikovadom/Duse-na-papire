@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ArrowLeft, Check, ChevronDown, BookOpen, Sparkles, ArrowDown, Download } from 'lucide-react';
 import { siteContent } from '../content';
-import { FreeGuideForm } from '../components/FreeGuideForm';
 
 interface GuidePointaViewProps {
   onNavigateHome: () => void;
@@ -16,20 +15,13 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
 }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
-  // Retrieve product 1 (Jak na kampaň na Pointě)
+  // Retrieve product 1 (Jak na kampaĹ na PointÄ›)
   const product =
     siteContent.shop.products.find((p) => p.id === 'kampan-pointa') ||
     siteContent.shop.products[0];
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
-  const scrollToDownload = () => {
-    const el = document.getElementById('stahnout');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -39,10 +31,10 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
         <button
           onClick={onNavigateHome}
           className="inline-flex items-center text-sm font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] transition-colors cursor-pointer group"
-          aria-label="Zpět na přehled pro tvůrce"
+          aria-label="ZpÄ›t na pĹ™ehled pro tvĹŻrce"
         >
           <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-200 group-hover:-translate-x-1 text-[#8C7B6B]" />
-          <span>Zpět na hlavní stránku</span>
+          <span>ZpÄ›t na hlavnĂ­ strĂˇnku</span>
         </button>
       </div>
 
@@ -58,13 +50,15 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <button
-                onClick={scrollToDownload}
+              <a
+                href={product.buttonLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2 cursor-pointer shadow-sm"
               >
                 <Download className="w-4 h-4" />
-                <span>Stáhnout zdarma</span>
-              </button>
+                <span>StĂˇhnout zdarma</span>
+              </a>
             </div>
           </div>
 
@@ -82,7 +76,7 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
         </div>
       </header>
 
-      {/* Subtle Atmospheric Divider – volný přechod */}
+      {/* Subtle Atmospheric Divider â€“ volnĂ˝ pĹ™echod */}
       <div className="max-w-4xl mx-auto px-6">
         <div className="h-px bg-gradient-to-r from-transparent via-[#D9C9B8]/50 to-transparent" />
       </div>
@@ -93,7 +87,7 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
         <section className="max-w-2xl space-y-6">
           <div className="flex items-center gap-2 text-xs font-sans-jost uppercase tracking-widest text-[#8C7B6B]">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>O průvodci</span>
+            <span>O prĹŻvodci</span>
           </div>
 
           <div className="font-sans-jost text-base sm:text-lg text-[#2C2520]/85 leading-relaxed space-y-5">
@@ -104,19 +98,19 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
             )}
 
             <p className="text-sm sm:text-base text-[#2C2520]/75">
-              Průvodce je strukturovaný tak, aby vás provedl celým procesem bez zbytečného
-              stresu a digitálního přehlcení. Od prvotního nápadu na kampaň, přes rozpočet
-              a stanovení cílové částky, až po texty odměn a komunikaci s podporovateli.
+              PrĹŻvodce je strukturovanĂ˝ tak, aby vĂˇs provedl celĂ˝m procesem bez zbyteÄŤnĂ©ho
+              stresu a digitĂˇlnĂ­ho pĹ™ehlcenĂ­. Od prvotnĂ­ho nĂˇpadu na kampaĹ, pĹ™es rozpoÄŤet
+              a stanovenĂ­ cĂ­lovĂ© ÄŤĂˇstky, aĹľ po texty odmÄ›n a komunikaci s podporovateli.
             </p>
           </div>
         </section>
 
-        {/* Pro koho to je Block – volný přechod, přirozená atmosféra */}
+        {/* Pro koho to je Block â€“ volnĂ˝ pĹ™echod, pĹ™irozenĂˇ atmosfĂ©ra */}
         <section className="bg-[#FAF8F5] rounded-[10px] py-6 sm:py-8">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-xs font-sans-jost uppercase tracking-widest text-[#8C7B6B] mb-4">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Komu pomůže</span>
+              <span>Komu pomĹŻĹľe</span>
             </div>
             <h2 className="font-serif-cormorant text-2xl sm:text-3xl font-light text-[#2C2520] mb-6">
               {siteContent.shop.whoIsItForTitle}
@@ -137,7 +131,7 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
           </div>
         </section>
 
-        {/* FAQ Accordion – čistý otevřený seznam */}
+        {/* FAQ Accordion â€“ ÄŤistĂ˝ otevĹ™enĂ˝ seznam */}
         <section className="max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-sans-jost uppercase tracking-widest text-[#8C7B6B] mb-3">
             <span>Dotazy</span>
@@ -171,14 +165,14 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
                     <div className="pb-5 pt-1 text-sm text-[#2C2520]/80 leading-relaxed font-sans-jost">
                       {faq.isEmailAnswer ? (
                         <p>
-                          Napište mi na{' '}
+                          NapiĹˇte mi na{' '}
                           <a
                             href={`mailto:${siteContent.meta.email}`}
                             className="underline underline-offset-2 hover:text-[#2C2520] text-[#2C2520] font-medium"
                           >
                             {siteContent.meta.email}
                           </a>
-                          , ráda odpovím.
+                          , rĂˇda odpovĂ­m.
                         </p>
                       ) : (
                         <p>{faq.answer}</p>
@@ -195,16 +189,21 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
         <section id="stahnout" className="scroll-mt-24 pt-8 pb-16">
           <div className="bg-[#EDE5D8] rounded-[12px] max-w-[560px] mx-auto p-8 sm:p-12 text-center shadow-[0_12px_40px_rgba(44,37,32,0.06)]">
             <h2 className="font-serif-cormorant text-3xl sm:text-4xl md:text-5xl font-light text-[#2C2520] mb-4">
-              Stáhnout průvodce zdarma
+              StĂˇhnout prĹŻvodce zdarma
             </h2>
             <p className="font-sans-jost text-base sm:text-lg text-[#2C2520]/80 leading-relaxed max-w-lg mx-auto mb-8">
-              Zadejte svůj e-mail a průvodce vám obratem pošlu. Občas vám napíšu i něco z tvůrčího zákulisí nebo dám vědět o novinkách pro autory. Odhlásit se můžete kdykoli.
+              Zadejte svĹŻj e-mail a prĹŻvodce vĂˇm obratem poĹˇlu. ObÄŤas vĂˇm napĂ­Ĺˇu i nÄ›co z tvĹŻrÄŤĂ­ho zĂˇkulisĂ­ nebo dĂˇm vÄ›dÄ›t o novinkĂˇch pro autory. OdhlĂˇsit se mĹŻĹľete kdykoli.
             </p>
 
-            <FreeGuideForm
-              variant="sand"
-              onNavigatePrivacy={onNavigatePrivacy}
-            />
+            <a
+              href={product.buttonLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2 cursor-pointer shadow-sm"
+            >
+              <Download className="w-4 h-4" />
+              <span>StĂˇhnout zdarma</span>
+            </a>
           </div>
         </section>
       </main>

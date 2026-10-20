@@ -211,10 +211,7 @@ export const siteContent = {
         badgePosition: 'left',
         status: 'available',
         buttonLabel: 'Stáhnout',
-        freeDelivery: {
-          endpoint:
-            'https://assets.mailerlite.com/jsonp/2393780/forms/201475959156639036/subscribe',
-        },
+        buttonLink: 'https://form.simpleshop.cz/ODoJP/buy/',
         image: '/images/Untitled Design.jpg',
         imagePlaceholder: 'Průvodce: Jak zvládnout předprodej knihy',
       },
