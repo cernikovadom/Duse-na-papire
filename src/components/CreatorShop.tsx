@@ -192,9 +192,13 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                     </button>
                   ) : product.id === 'kampan-pointa' ? (
                     <a
-                      href={product.buttonLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/pruvodce-kampan-pointa"
+                      onClick={(e) => {
+                        if (onNavigate) {
+                          e.preventDefault();
+                          onNavigate('/pruvodce-kampan-pointa');
+                        }
+                      }}
                       className="btn-primary !py-2 !px-4 !text-xs group inline-flex items-center cursor-pointer"
                     >
                       <Download className="w-3.5 h-3.5 mr-1.5" />
