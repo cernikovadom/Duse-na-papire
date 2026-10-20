@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Centrální konfigurační soubor s veškerým obsahem webu Dominiky Černíkové.
  * Všechny texty, odkazy, ceny a zástupné symboly [placeholder] se spravují zde.
  */
@@ -708,8 +708,8 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
   about: {
     eyebrow: 'O mně',
     title: 'Kdo za tím stojí',
-    photo: '/images/hf_20261010_130722_911f379c-6ca6-437d-98c0-f76ede0bbdf7.png',
-    photoPlaceholder: '/images/hf_20261010_130722_911f379c-6ca6-437d-98c0-f76ede0bbdf7.png',
+    photo: '/images/autorka.webp',
+    photoPlaceholder: '/images/autorka.webp',
     paragraph1:
       'Jmenuji se Dominika a jsem máma, introvertka a autorka projektu Duše na papíře. Dlouho jsem pracovala s čísly a návrhy, než jsem našla svůj opravdový domov v psaní a tvoření.',
     paragraph2:
