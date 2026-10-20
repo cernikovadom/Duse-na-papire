@@ -761,7 +761,13 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
 
   // 9. NEWSLETTER
   newsletter: {
-    endpoint: '[DOPLNIT]',
+    // MailerLite formuláře – každý ukládá odběratele do vlastní skupiny (spouští svou automatizaci)
+    endpoints: {
+      'prvni-kapitola':
+        'https://assets.mailerlite.com/jsonp/2393780/forms/201844635345094632/subscribe',
+      'pruvodce-predprodej':
+        'https://assets.mailerlite.com/jsonp/2393780/forms/201475959156639036/subscribe',
+    } as Record<string, string>,
     title: 'Zůstaňme v kontaktu',
     text:
       'Přihlaste se k odběru a jako poděkování si vyberte dárek: první kapitolu knihy Mléčné zuby duše, nebo průvodce Jak zvládnout předprodej knihy.',

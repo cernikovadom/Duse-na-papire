@@ -32,34 +32,20 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
     setErrorMessage(null);
     setIsSubmitting(true);
 
-    const endpoint = siteContent.newsletter.endpoint;
+    const endpoint = siteContent.newsletter.endpoints[selectedGift];
 
     try {
-      if (
-        endpoint &&
-        endpoint !== '[DOPLNIT]' &&
-        (endpoint.startsWith('http') || endpoint.startsWith('/'))
-      ) {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: name.trim(),
-            email: trimmedEmail,
-            group: selectedGift,
-            tag: selectedGift,
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error('Chyba odeslání');
-        }
-      } else {
-        // Simulace nebo příprava napojení
-        await new Promise((resolve) => setTimeout(resolve, 600));
+      const formData = new FormData();
+      formData.append('fields[email]', trimmedEmail);
+      if (name.trim()) {
+        formData.append('fields[name]', name.trim());
       }
+
+      await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      });
 
       setIsSubmitted(true);
     } catch {
