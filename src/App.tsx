@@ -9,6 +9,7 @@ import { LegalTermsView } from './views/LegalTermsView';
 import { PrivacyPolicyView } from './views/PrivacyPolicyView';
 import { GuidePointaView } from './views/GuidePointaView';
 import { TemplatesView } from './views/TemplatesView';
+import { ToolsTeamView } from './views/ToolsTeamView';
 import { SampleChapterView } from './views/SampleChapterView';
 import { CookieConsentBanner } from './components/CookieConsentBanner';
 import { siteContent, BlogPostItem, StoryCardItem } from './content';
@@ -147,6 +148,7 @@ export default function App() {
             onNavigateHome={() => navigateTo('/', 'pro-tvrce')}
             onNavigatePrivacy={() => navigateTo('/ochrana-osobnich-udaju')}
             onNavigateTerms={() => navigateTo('/obchodni-podminky')}
+            onNavigate={(path) => navigateTo(path)}
           />
         )}
 
@@ -156,6 +158,13 @@ export default function App() {
             onNavigate={(path, anchor) => navigateTo(path, anchor)}
             onNavigatePrivacy={() => navigateTo('/ochrana-osobnich-udaju')}
             onNavigateTerms={() => navigateTo('/obchodni-podminky')}
+          />
+        )}
+
+        {currentPath === '/tvurci-tym' && (
+          <ToolsTeamView
+            onNavigateHome={() => navigateTo('/', 'pro-tvrce')}
+            onScrollToNewsletter={scrollToNewsletter}
           />
         )}
 

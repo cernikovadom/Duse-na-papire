@@ -506,16 +506,16 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({
 
                 <div className="p-4 bg-[#FAF8F5] border border-[#D9C9B8]/60 rounded-xl">
                   <span className="font-medium text-[#2C2520] block mb-1">
-                    Platební brána
+                    Stripe (Stripe Payments Europe, Ltd.)
                   </span>
                   <p className="text-xs text-[#2C2520]/75 leading-relaxed">
-                    Licencovaný poskytovatel zabezpečených online plateb kartou a převodem integrovaný v SimpleShopu.
+                    Platební brána, licencovaný poskytovatel zabezpečených online plateb kartou a převodem integrovaný v SimpleShopu.
                   </p>
                 </div>
 
                 <div className="p-4 bg-[#FAF8F5] border border-[#D9C9B8]/60 rounded-xl">
                   <span className="font-medium text-[#2C2520] block mb-1">
-                    Google Workspace (Google Ireland Ltd.)
+                    Google (Gmail, Google Disk)
                   </span>
                   <p className="text-xs text-[#2C2520]/75 leading-relaxed">
                     Zabezpečená cloudová e-mailová schránka a cloudové úložiště pro správu objednávek.
@@ -524,10 +524,10 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({
 
                 <div className="p-4 bg-[#FAF8F5] border border-[#D9C9B8]/60 rounded-xl">
                   <span className="font-medium text-[#2C2520] block mb-1">
-                    E-mailingový rozesílač & Webhosting
+                    MailerLite (MailerLite Limited) & Webhosting
                   </span>
                   <p className="text-xs text-[#2C2520]/75 leading-relaxed">
-                    Služby pro hromadné odesílání dárků a spolehlivý běh webové infrastruktury na serverech v EU.
+                    MailerLite slouží k hromadnému odesílání dárků a newsletteru. Webhosting zajišťuje spolehlivý běh webové infrastruktury na serverech v EU.
                   </p>
                 </div>
               </div>

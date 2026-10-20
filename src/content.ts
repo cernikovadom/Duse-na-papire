@@ -24,6 +24,7 @@ export interface ProductItem {
   freeDelivery?: {
     endpoint: string;
   };
+  faqs?: FaqItem[];
 }
 
 export interface SampleChapter {
@@ -59,6 +60,7 @@ export interface FaqItem {
   question: string;
   answer: string;
   isEmailAnswer?: boolean;
+  link?: { label: string; href: string };
 }
 
 export interface FragmentItem {
@@ -205,7 +207,7 @@ export const siteContent = {
         shortDescription:
           'Praktický průvodce přípravou a vedením kampaně na podporu vydání knihy. Vše, co bych chtěla vědět, než jsem začala.',
         longDescription:
-          'Moje kampaň vybrala 124 785 Kč od 170 podporovatelů a přípravu jsem začala zhruba dva a půl měsíce před spuštěním. V průvodci najdete, jak si kampaň naplánovat, co připravit předem, jak mluvit o knize bez pocitu, že se vnucujete, a jak udržet energii po celý měsíc kampaně. Píšu ho pro autory, kteří chtějí vydat knihu klidně a s rozmyslem.',
+          'Moje kampaň vybrala 124 785 Kč od 170 podporovatelů a přípravu jsem začala zhruba dva a půl měsíce před spuštěním. V průvodci najdeš, jak si kampaň naplánovat, co připravit předem, jak mluvit o knize bez pocitu, že se vnucuješ, a jak udržet energii po celý měsíc kampaně. Píšu ho pro autory, kteří chtějí vydat knihu klidně a s rozmyslem.',
         price: 'Zdarma',
         badge: 'Zdarma',
         badgePosition: 'left',
@@ -239,6 +241,28 @@ export const siteContent = {
         badgePosition: 'left',
         buttonLabel: 'Dát mi vědět',
         imagePlaceholder: 'Nástroje: Notion, Claude a Canva',
+        faqs: [
+          {
+            question: 'Kdy bude produkt hotový a kolik bude stát?',
+            answer:
+              'Zatím to přesně nevím. Dej mi vědět a ozvu se ti e-mailem, jakmile bude hotový.',
+          },
+          {
+            question: 'Jak produkt dostanu?',
+            answer:
+              'Po zadání e-mailu ti přijde zpráva do schránky. Pokud ji nevidíš, mrkni do hromadné pošty nebo spamu.',
+          },
+          {
+            question: 'Je to vhodné i pro začátečníky?',
+            answer:
+              'Ano. Píšu to tak, aby tomu rozuměl i člověk, který s Notionem, Claudem a Canvou nikdy nepracoval.',
+          },
+          {
+            question: 'Co když budu mít doplňující otázky?',
+            answer: 'Napiš mi na cernikova.dom@gmail.com, ráda odpovím.',
+            isEmailAnswer: true,
+          },
+        ],
       },
     ] as ProductItem[],
 
@@ -254,12 +278,13 @@ export const siteContent = {
       {
         question: 'Opravdu je zdarma?',
         answer:
-          'Ano, samotný průvodce „Jak zvládnout předprodej knihy“ je zcela zdarma – jediné, co za něj chci, je váš e-mail, abych vám ho mohla poslat a občas se ozvat s novinkami. Ostatní doplňky a praktické materiály (jako je balíček hotových šablon pro autory) jsou již placené, protože obsahují desítky hotových podkladů a nástrojů, které vám ušetří týdny práce.',
+          'Ano, průvodce je zcela zdarma. Stačí zadat e-mail, abych ti ho mohla poslat. Hotové šablony e-mailů, plán kampaně a další nástroje najdeš v placeném balíčku Šablony pro autory.',
+        link: { label: 'Šablony pro autory', href: '/sablony-pro-autory' },
       },
       {
         question: 'Jak produkt dostanu?',
         answer:
-          'Po zadání e-mailu vám průvodce přijde do schránky. Pokud ho nevidíte, zkontrolujte prosím složku hromadné pošty nebo spam.',
+          'Po zadání e-mailu ti průvodce přijde do schránky. Pokud ho nevidíš, mrkni do hromadné pošty nebo spamu.',
       },
       {
         question: 'Je to vhodné i pro začátečníky?',
@@ -273,7 +298,7 @@ export const siteContent = {
       },
       {
         question: 'Co když budu mít doplňující otázky?',
-        answer: 'Napište mi na cernikova.dom@gmail.com, ráda odpovím.',
+        answer: 'Napiš mi na cernikova.dom@gmail.com, ráda odpovím.',
         isEmailAnswer: true,
       },
     ] as FaqItem[],
@@ -433,7 +458,7 @@ export const siteContent = {
           {
             title: 'Canva šablony',
             label: 'Canva · zdarma',
-            text: '35 hotových grafik v 5 stylech – 7 témat pro celou kampaň: start, citát, milník, odpočet, poděkování, Instagram Story a leták A6. Stačí přepsat text a vložit vlastní fotky.',
+            text: '35 hotových grafik v 5 stylech – 7 témat pro celou kampaň: start, úryvek, milník, odpočet, poděkování, Instagram Story a leták A4. Stačí přepsat text a vložit vlastní fotky.',
             icon: 'Palette',
           },
         ],
@@ -470,7 +495,7 @@ export const siteContent = {
           },
         ],
         footerNote:
-          'Každý styl obsahuje všech 7 témat: 5 příspěvků na Instagram (1080×1440), Story (1080×1920) a leták A6.',
+          'Každý styl obsahuje všech 7 témat: 5 příspěvků na Instagram 1080×1350 (4:5), Story (1080×1920) a leták A4.',
       },
       whoIsItForTitle: 'Pro koho je',
       whoIsItForList: [
@@ -918,9 +943,9 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
 ## 4. Kdo má k vašim údajům přístup (Příjemci a zpracovatelé)
 Vaše osobní údaje neprodávám ani neposkytuji třetím stranám pro marketingové účely. Pro zajištění provozu webu, prodeje a rozesílky využívám prověřené zpracovatele:
 - **SimpleShop (společnost Redbit s.r.o.):** Poskytovatel prodejního formuláře, automatizace objednávek a fakturačního systému.
-- **Poskytovatel platebních služeb:** Bezpečné platební brány pro bezhotovostní platby integrované v SimpleShopu.
-- **Google Workspace (Google Ireland Ltd.):** E-mailová schránka a cloudové úložiště.
-- **Poskytovatel e-mailingu:** Služba pro hromadné zasílání e-mailů s dárky a newslettery splňující podmínky GDPR.
+- **Stripe (Stripe Payments Europe, Ltd.):** Platební brána pro bezhotovostní platby integrovaná v SimpleShopu.
+- **Google (Gmail, Google Disk):** E-mailová schránka a cloudové úložiště.
+- **MailerLite (MailerLite Limited):** Služba pro hromadné zasílání e-mailů s dárky a newslettery splňující podmínky GDPR.
 - **Poskytovatel webhostingu:** Provoz serverové infrastruktury webu dusenapapire.cz.
 
 Všechna data jsou zpracovávána na území Evropské unie nebo v souladu s mechanismy zaručujícími odpovídající úroveň ochrany osobních údajů.

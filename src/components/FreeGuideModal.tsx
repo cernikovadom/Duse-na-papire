@@ -66,7 +66,7 @@ export const FreeGuideModal: React.FC<FreeGuideModalProps> = ({
             Stáhnout průvodce zdarma
           </h2>
           <p className="font-sans-jost text-sm sm:text-base text-[#2C2520]/80 leading-relaxed">
-            Zadejte svůj e-mail a průvodce vám obratem pošlu. Občas vám napíšu i něco z tvůrčího zákulisí nebo dám vědět o novinkách pro autory. Odhlásit se můžete kdykoli.
+            Zadej svůj e-mail a průvodce ti obratem pošlu. Občas ti napíšu i něco z tvůrčího zákulisí nebo dám vědět o novinkách pro autory. Odhlásit se můžeš kdykoli.
           </p>
         </div>
 

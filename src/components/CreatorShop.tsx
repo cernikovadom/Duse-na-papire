@@ -126,8 +126,22 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                   </p>
 
                   {/* "Více" link for products with detailed long description */}
-                  {product.longDescription && (
-                    product.id === 'kampan-pointa' ? (
+                  {(product.longDescription || product.id === 'tvurci-tym') && (
+                    product.id === 'tvurci-tym' ? (
+                      <a
+                        href="/tvurci-tym"
+                        onClick={(e) => {
+                          if (onNavigate) {
+                            e.preventDefault();
+                            onNavigate('/tvurci-tym');
+                          }
+                        }}
+                        className="inline-flex items-center text-xs font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] mb-4 cursor-pointer underline underline-offset-4 decoration-[#D9C9B8]"
+                      >
+                        <Info className="w-3.5 h-3.5 mr-1" />
+                        <span>Více informací</span>
+                      </a>
+                    ) : product.id === 'kampan-pointa' ? (
                       <a
                         href="/pruvodce-kampan-pointa"
                         onClick={(e) => {
@@ -294,7 +308,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                     <div className="px-2 pb-5 pt-1 text-sm text-[#2C2520]/80 leading-relaxed font-sans-jost">
                       {faq.isEmailAnswer ? (
                         <p>
-                          Napište mi na{' '}
+                          Napiš mi na{' '}
                           <a
                             href={`mailto:${siteContent.meta.email}`}
                             className="underline underline-offset-2 hover:text-[#2C2520] text-[#2C2520] font-medium"
@@ -304,7 +318,23 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                           , ráda odpovím.
                         </p>
                       ) : (
-                        <p>{faq.answer}</p>
+                        <>
+                          <p>{faq.answer}</p>
+                          {faq.link && (
+                            <a
+                              href={faq.link.href}
+                              onClick={(e) => {
+                                if (onNavigate) {
+                                  e.preventDefault();
+                                  onNavigate(faq.link!.href);
+                                }
+                              }}
+                              className="inline-block mt-2 underline underline-offset-2 hover:text-[#2C2520] text-[#2C2520] font-medium"
+                            >
+                              {faq.link.label}
+                            </a>
+                          )}
+                        </>
                       )}
                     </div>
                   )}

@@ -185,7 +185,7 @@ export const LegalTermsView: React.FC<LegalTermsViewProps> = ({
       subtitle: 'Zvláštní režim pro digitální obsah podle § 1837 písm. l) občanského zákoníku',
       highlight: {
         title: 'Důležité upozornění pro spotřebitele',
-        text: 'Vzhledem k tomu, že digitální obsah obdržíte ihned po úhradě, zákon v souladu s § 1837 písm. l) OZ stanoví, že okamžitým dodáním zaniká právo na 14denní odstoupení od smlouvy bez udání důvodu.',
+        text: 'S vaším výslovným souhlasem zpřístupňuji obsah ihned po zaplacení, čímž zaniká právo na 14denní odstoupení od smlouvy bez udání důvodu (§ 1837 písm. l) OZ).',
       },
       clauses: [
         {
@@ -408,7 +408,7 @@ export const LegalTermsView: React.FC<LegalTermsViewProps> = ({
               <span className="font-medium text-[#2C2520] block mb-1">
                 14denní lhůta pro odstoupení
               </span>
-              Okamžitým zpřístupněním digitálního obsahu po zaplacení zaniká právo na odstoupení bez udání důvodu (§ 1837 písm. l OZ).
+              S vaším výslovným souhlasem zpřístupňuji obsah ihned po zaplacení, čímž zaniká právo na odstoupení bez udání důvodu (§ 1837 písm. l) OZ).
             </div>
             <div className="p-3.5 bg-white/70 rounded-xl border border-[#D9C9B8]/50">
               <span className="font-medium text-[#2C2520] block mb-1">

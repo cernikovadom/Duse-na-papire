@@ -6,12 +6,14 @@ interface GuidePointaViewProps {
   onNavigateHome: () => void;
   onNavigatePrivacy?: () => void;
   onNavigateTerms?: () => void;
+  onNavigate?: (path: string) => void;
 }
 
 export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
   onNavigateHome,
   onNavigatePrivacy,
   onNavigateTerms,
+  onNavigate,
 }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -98,9 +100,8 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
             )}
 
             <p className="text-sm sm:text-base text-[#2C2520]/75">
-              Průvodce je strukturovaný tak, aby vás provedl celým procesem bez zbytečného
-              stresu a digitálního přehlcení. Od prvotního nápadu na kampaň, přes rozpočet
-              a stanovení cílové částky, až po texty odměn a komunikaci s podporovateli.
+              Průvodce tě provede celým procesem bez zbytečného stresu: od prvního nápadu na
+              kampaň přes první dny a útlum uprostřed až po to, jak celý měsíc psychicky ustát.
             </p>
           </div>
         </section>
@@ -165,7 +166,7 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
                     <div className="pb-5 pt-1 text-sm text-[#2C2520]/80 leading-relaxed font-sans-jost">
                       {faq.isEmailAnswer ? (
                         <p>
-                          Napište mi na{' '}
+                          Napiš mi na{' '}
                           <a
                             href={`mailto:${siteContent.meta.email}`}
                             className="underline underline-offset-2 hover:text-[#2C2520] text-[#2C2520] font-medium"
@@ -175,7 +176,23 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
                           , ráda odpovím.
                         </p>
                       ) : (
-                        <p>{faq.answer}</p>
+                        <>
+                          <p>{faq.answer}</p>
+                          {faq.link && (
+                            <a
+                              href={faq.link.href}
+                              onClick={(e) => {
+                                if (onNavigate) {
+                                  e.preventDefault();
+                                  onNavigate(faq.link!.href);
+                                }
+                              }}
+                              className="inline-block mt-2 underline underline-offset-2 hover:text-[#2C2520] text-[#2C2520] font-medium"
+                            >
+                              {faq.link.label}
+                            </a>
+                          )}
+                        </>
                       )}
                     </div>
                   )}
@@ -192,7 +209,7 @@ export const GuidePointaView: React.FC<GuidePointaViewProps> = ({
               Stáhnout průvodce zdarma
             </h2>
             <p className="font-sans-jost text-base sm:text-lg text-[#2C2520]/80 leading-relaxed max-w-lg mx-auto mb-8">
-              Zadejte svůj e-mail a průvodce vám obratem pošlu. Občas vám napíšu i něco z tvůrčího zákulisí nebo dám vědět o novinkách pro autory. Odhlásit se můžete kdykoli.
+              Zadej svůj e-mail a průvodce ti obratem pošlu. Občas ti napíšu i něco z tvůrčího zákulisí nebo dám vědět o novinkách pro autory. Odhlásit se můžeš kdykoli.
             </p>
 
             <a

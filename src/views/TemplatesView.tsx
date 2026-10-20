@@ -260,7 +260,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
                     Canva šablony
                   </h4>
                   <p className="font-sans-jost text-sm text-[#2C2520] leading-relaxed">
-                    35 hotových grafik v 5 stylech – 7 témat pro celou kampaň: start, citát, milník, odpočet, poděkování, Instagram Story a leták A6. Stačí přepsat text a vložit vlastní fotky.
+                    35 hotových grafik v 5 stylech – 7 témat pro celou kampaň: start, úryvek, milník, odpočet, poděkování, Instagram Story a leták A4. Stačí přepsat text a vložit vlastní fotky.
                   </p>
                 </div>
               </div>
@@ -423,7 +423,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
 
             {/* Legal reassurance notice */}
             <div className="mt-6 pt-4 border-t border-[#D9C9B8]/50 text-xs font-sans-jost text-[#8C7B6B] leading-relaxed">
-              <span>Platba probíhá zabezpečeně přes SimpleShop. Před nákupem si můžete prostudovat </span>
+              <span>Platba probíhá zabezpečeně přes SimpleShop. Před nákupem si můžeš prostudovat</span>
               <button
                 type="button"
                 onClick={() => onNavigateTerms?.()}
