@@ -9,7 +9,7 @@ import { LegalTermsView } from './views/LegalTermsView';
 import { PrivacyPolicyView } from './views/PrivacyPolicyView';
 import { GuidePointaView } from './views/GuidePointaView';
 import { TemplatesView } from './views/TemplatesView';
-import { ReadingModal } from './components/ReadingModal';
+import { SampleChapterView } from './views/SampleChapterView';
 import { CookieConsentBanner } from './components/CookieConsentBanner';
 import { siteContent, BlogPostItem, StoryCardItem } from './content';
 
@@ -21,7 +21,6 @@ export default function App() {
   const [activeStorySlug, setActiveStorySlug] = useState<string | null>(null);
 
   // Modals state
-  const [isSampleChapterOpen, setIsSampleChapterOpen] = useState(false);
   const [isCookieSettingsOpen, setIsCookieSettingsOpen] = useState(false);
 
   // Sync with browser navigation
@@ -29,10 +28,6 @@ export default function App() {
     const parseUrl = () => {
       const path = window.location.pathname || '/';
       setCurrentPath(path);
-
-      if (path === '/prvni-kapitola' || path === '/kapitola-zdarma') {
-        setIsSampleChapterOpen(true);
-      }
 
       if (path.startsWith('/povidani/')) {
         const slug = path.replace('/povidani/', '');
@@ -123,12 +118,7 @@ export default function App() {
     ? siteContent.shortStories.cards.find((s) => s.slug === activeStorySlug) || siteContent.shortStories.cards[0]
     : null;
 
-  const handleCloseSampleChapter = () => {
-    setIsSampleChapterOpen(false);
-    if (currentPath === '/prvni-kapitola' || currentPath === '/kapitola-zdarma') {
-      navigateTo('/', 'kniha');
-    }
-  };
+  const openSampleChapter = () => navigateTo('/prvni-kapitola');
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#2C2520] flex flex-col justify-between selection:bg-[#EDE5D8] selection:text-[#2C2520]">
@@ -142,7 +132,7 @@ export default function App() {
       <div className="flex-1">
         {currentPath === '/' && (
           <HomeView
-            onOpenSampleChapter={() => setIsSampleChapterOpen(true)}
+            onOpenSampleChapter={openSampleChapter}
             onOpenStory={handleOpenStory}
             onOpenPost={handleOpenPost}
             onViewAllPosts={() => navigateTo('/povidani')}
@@ -180,8 +170,12 @@ export default function App() {
           <BlogPostView
             post={currentPost}
             onNavigateBack={() => navigateTo('/povidani')}
-            onOpenSampleChapter={() => setIsSampleChapterOpen(true)}
+            onOpenSampleChapter={openSampleChapter}
           />
+        )}
+
+        {(currentPath === '/prvni-kapitola' || currentPath === '/kapitola-zdarma') && (
+          <SampleChapterView onNavigateBack={() => navigateTo('/', 'kniha')} />
         )}
 
         {currentPath.startsWith('/povidky/') && currentStory && (
@@ -210,18 +204,6 @@ export default function App() {
       <Footer
         onNavigate={(path) => navigateTo(path)}
         onOpenCookieSettings={() => setIsCookieSettingsOpen(true)}
-      />
-
-      {/* Reading Modal for Free Sample Chapter */}
-      <ReadingModal
-        isOpen={isSampleChapterOpen || currentPath === '/prvni-kapitola' || currentPath === '/kapitola-zdarma'}
-        onClose={handleCloseSampleChapter}
-        title={siteContent.book.sampleChapter.title}
-        chapterNumber={siteContent.book.sampleChapter.number}
-        subtitle={`${siteContent.book.sampleChapter.bookTitle} · ${siteContent.book.sampleChapter.readingTime}`}
-        author={siteContent.meta.author}
-        paragraphs={siteContent.book.sampleChapter.paragraphs}
-        bookBuyLink={siteContent.book.primaryButtonLink}
       />
 
       {/* GDPR Cookie Consent Banner & Settings Modal */}
