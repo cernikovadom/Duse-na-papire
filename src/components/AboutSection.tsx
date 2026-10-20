@@ -21,15 +21,25 @@ export const AboutSection: React.FC = () => {
     <section id="o-mne" className="scroll-mt-24 pt-16 pb-20 md:pt-24 md:pb-28">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16 md:mb-24">
-          {/* Photo Placeholder on Left – volně plovoucí, žádný dvojitý rámeček */}
+          {/* Author Photo on Left */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-[360px] rounded-[10px] overflow-hidden shadow-[0_16px_36px_rgba(44,37,32,0.06)] transition-transform duration-500 hover:-translate-y-1">
-              <PlaceholderFrame
-                label={siteContent.about.photoPlaceholder}
-                aspectRatio="portrait"
-                iconType="portrait"
-                className="bg-[#EDE5D8]/80"
-              />
+            <div className="w-full max-w-[360px] rounded-[10px] overflow-hidden shadow-[0_16px_36px_rgba(44,37,32,0.08)] bg-[#EDE5D8]/50 transition-transform duration-500 hover:-translate-y-1">
+              {siteContent.about.photo ? (
+                <img
+                  src={siteContent.about.photo}
+                  alt={siteContent.meta.author}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <PlaceholderFrame
+                  label={siteContent.about.photoPlaceholder}
+                  aspectRatio="portrait"
+                  iconType="portrait"
+                  className="bg-[#EDE5D8]/80"
+                />
+              )}
             </div>
           </div>
 

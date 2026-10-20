@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2C2520" />
+      <stop offset="100%" stop-color="#1A1512" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EDE5D8" />
+      <stop offset="50%" stop-color="#D9C9B8" />
+      <stop offset="100%" stop-color="#C4AF98" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bg)" stroke="#8C7B6B" stroke-width="1.5" stroke-opacity="0.4" />
+
+  <!-- Open page / folded sheet silhouette -->
+  <path d="M18 44 C24 43 28 41 32 44 C36 41 40 43 46 44 L46 22 C40 21 36 23 32 20 C28 23 24 21 18 22 Z" fill="#FAF8F5" fill-opacity="0.12" stroke="url(#gold)" stroke-width="1.8" stroke-linejoin="round" />
+
+  <!-- Center spine -->
+  <line x1="32" y1="20" x2="32" y2="44" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.6" />
+
+  <!-- Elegant quill / pen nib rising through the center -->
+  <path d="M32 14 L36 26 C36 28 35 30 33 32 L33 38 L31 38 L31 32 C29 30 28 28 28 26 Z" fill="url(#gold)" />
+  <circle cx="32" cy="27" r="1.1" fill="#1A1512" />
+  <line x1="32" y1="27" x2="32" y2="38" stroke="#1A1512" stroke-width="0.8" />
+</svg>

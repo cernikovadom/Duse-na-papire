@@ -229,7 +229,7 @@ export const siteContent = {
         status: 'available',
         buttonLabel: 'Chci šablony',
         buttonLink: '/sablony-pro-autory',
-        image: '/src/assets/images/author_templates_mockup_1792403344280.jpg',
+        image: '/images/author_templates_mockup_1792403344280.jpg',
         imagePlaceholder: 'Šablony pro autory',
       },
       {
@@ -584,7 +584,7 @@ export const siteContent = {
         excerpt:
           'Co se děje mezi odesláním textu a chvílí, kdy kniha vyjde. Krok za krokem, bez přikrášlování.',
         date: '[datum]',
-        image: '/src/assets/images/manuscript_to_book_1792403703880.jpg',
+        image: '/images/manuscript_to_book_1792403703880.jpg',
         imagePlaceholder: '[Fotografie: Jak se z rukopisu stává kniha]',
         content: `
 Dlouho jsem si myslela, že nejtěžší část je dopsat poslední větu. Pak jsem ji dopsala, zavřela notebook a zjistila, že mám v ruce teprve rukopis. Ne knihu. Mezi těmi dvěma věcmi leží cesta, o které se moc nemluví, a tak ji zkusím popsat tak, jak jsem ji prožila já.
@@ -634,7 +634,7 @@ Co bych řekla sobě na začátku
         excerpt:
           'Proč jsem se bála mluvit o vlastní knize a co mi nakonec pomohlo vydržet celý měsíc.',
         date: '[datum]',
-        image: '/src/assets/images/campaign_courage_notes_1792403705357.jpg',
+        image: '/images/campaign_courage_notes_1792403705357.jpg',
         imagePlaceholder: '[Fotografie: Kampaň, ze které jsem měla strach]',
         content: `Psát mi nikdy nepřišlo těžké. **Těžké mi přišlo říct nahlas: Napsala jsem knihu a chtěla bych, abyste ji podpořili.** Když jsem se rozhodla vydat **Mléčné zuby duše** přes Pointu, věděla jsem, že bez kampaně to nepůjde. A přesto jsem ji v duchu odkládala, jak to šlo.
 
@@ -674,7 +674,7 @@ Strach z toho, že budete otravovat, často znamená, že vám na lidech kolem z
         excerpt:
           'Jak tvořit, když máte malé dítě a času je málo. A proč to nemusí být dokonalé.',
         date: '[datum]',
-        image: '/src/assets/images/writing_motherhood_cozy_1792403704835.jpg',
+        image: '/images/writing_motherhood_cozy_1792403704835.jpg',
         imagePlaceholder: '[Fotografie: Psaní mezi krmením a uspáváním]',
         content: `Představa spisovatelky, která ráno usedne s kávou k psacímu stolu a do oběda napíše kapitolu, mi teď připadá skoro jako pohádka. Moje psaní posledních pár měsíců vypadá jinak: věta v telefonu během krmení, odstavec, když dcera konečně usne, a poznámka na papírku, protože mě nápad napadl uprostřed vaření.
 
@@ -711,7 +711,8 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
   about: {
     eyebrow: 'O mně',
     title: 'Kdo za tím stojí',
-    photoPlaceholder: '/src/assets/images/hf_20261010_130722_911f379c-6ca6-437d-98c0-f76ede0bbdf7.png',
+    photo: '/images/hf_20261010_130722_911f379c-6ca6-437d-98c0-f76ede0bbdf7.png',
+    photoPlaceholder: '/images/hf_20261010_130722_911f379c-6ca6-437d-98c0-f76ede0bbdf7.png',
     paragraph1:
       'Jmenuji se Dominika a jsem máma, introvertka a autorka projektu Duše na papíře. Dlouho jsem pracovala s čísly a návrhy, než jsem našla svůj opravdový domov v psaní a tvoření.',
     paragraph2:
