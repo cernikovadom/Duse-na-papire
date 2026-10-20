@@ -46,6 +46,8 @@ export const FreeGuideForm: React.FC<FreeGuideFormProps> = ({
 
     try {
       const formData = new FormData();
+      formData.append('ml-submit', '1');
+      formData.append('anticsrf', 'true');
       formData.append('fields[email]', trimmedEmail);
       if (name.trim()) {
         formData.append('fields[name]', name.trim());

@@ -36,6 +36,9 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
 
     try {
       const formData = new FormData();
+      // Skryté pole z vloženého kódu MailerLite – bez nich formulář přihlášení nezpracuje
+      formData.append('ml-submit', '1');
+      formData.append('anticsrf', 'true');
       formData.append('fields[email]', trimmedEmail);
       if (name.trim()) {
         formData.append('fields[name]', name.trim());
