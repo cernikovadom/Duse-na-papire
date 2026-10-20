@@ -235,7 +235,7 @@ export const siteContent = {
         id: 'tvurci-tym',
         title: 'Můj tvůrčí tým: Notion, Claude a Canva',
         shortDescription:
-          'Jak si nastavit nástroje, které vám pomohou s psaním, plánováním i propagací. Abyste měli víc času na tvoření.',
+          'Jak si nastavit nástroje, které ti pomůžou s psaním, plánováním i propagací. Abys měl/a víc času na tvoření.',
         status: 'coming_soon',
         badge: 'Připravuji',
         badgePosition: 'left',
@@ -515,7 +515,7 @@ export const siteContent = {
         {
           question: 'V jaké podobě balíček dostanu?',
           answer:
-            'Po zaplacení ti přijde e-mail s odkazem na průvodce se všemi šablonami. Z něj se dostaneš i do šablony v Notionu, ke kalkulačce a k šablonám v Canvě.',
+            'Po zaplacení ti přijde e-mail s odkazem na dokument se všemi šablonami. Z něj se dostaneš i do šablony v Notionu, ke kalkulačce a k šablonám v Canvě.',
         },
         {
           question: 'Potřebuju placený Notion nebo Canvu?',
@@ -865,7 +865,7 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
 
 ## 4. Cena a platební podmínky
 1. Cena produktu je uvedena na prodejní stránce a v objednávkovém formuláři. Prodávající není plátce DPH, cena je konečná.
-2. Platbu kupní ceny je možné provést bezhotovostně prostřednictvím zabezpečené online platební brány integrované v objednávkovém systému SimpleShop (online platební kartou nebo rychlým online bankovním převodem).
+2. Platbu kupní ceny je možné provést bezhotovostně: online platební kartou prostřednictvím zabezpečené platební brány Stripe integrované v objednávkovém systému SimpleShop, nebo bankovním převodem přímo na bankovní účet prodávající.
 3. Kupní cena je splatná bezprostředně při dokončení objednávky. Závazek kupujícího uhradit kupní cenu je splněn okamžikem připsání částky na účet prodávající.
 4. Po přijetí platby vystaví prodávající kupujícímu daňový doklad (fakturu) v elektronické podobě a zašle jej na e-mailovou adresu kupujícího.
 
@@ -946,7 +946,7 @@ Vaše osobní údaje neprodávám ani neposkytuji třetím stranám pro marketin
 - **Stripe (Stripe Payments Europe, Ltd.):** Platební brána pro bezhotovostní platby integrovaná v SimpleShopu.
 - **Google (Gmail, Google Disk):** E-mailová schránka a cloudové úložiště.
 - **MailerLite (MailerLite Limited):** Služba pro hromadné zasílání e-mailů s dárky a newslettery splňující podmínky GDPR.
-- **Poskytovatel webhostingu:** Provoz serverové infrastruktury webu dusenapapire.cz.
+- **GitHub Pages (GitHub, Inc.):** Webhosting, provoz webu dusenapapire.cz.
 
 Všechna data jsou zpracovávána na území Evropské unie nebo v souladu s mechanismy zaručujícími odpovídající úroveň ochrany osobních údajů.
 

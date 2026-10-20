@@ -423,7 +423,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
 
             {/* Legal reassurance notice */}
             <div className="mt-6 pt-4 border-t border-[#D9C9B8]/50 text-xs font-sans-jost text-[#8C7B6B] leading-relaxed">
-              <span>Platba probíhá zabezpečeně přes SimpleShop. Před nákupem si můžeš prostudovat</span>
+              <span>Platba probíhá zabezpečeně přes SimpleShop. Před nákupem si můžeš prostudovat </span>
               <button
                 type="button"
                 onClick={() => onNavigateTerms?.()}

@@ -509,7 +509,7 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({
                     Stripe (Stripe Payments Europe, Ltd.)
                   </span>
                   <p className="text-xs text-[#2C2520]/75 leading-relaxed">
-                    Platební brána, licencovaný poskytovatel zabezpečených online plateb kartou a převodem integrovaný v SimpleShopu.
+                    Platební brána, licencovaný poskytovatel zabezpečených online plateb kartou integrovaný v SimpleShopu.
                   </p>
                 </div>
 
@@ -524,10 +524,10 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({
 
                 <div className="p-4 bg-[#FAF8F5] border border-[#D9C9B8]/60 rounded-xl">
                   <span className="font-medium text-[#2C2520] block mb-1">
-                    MailerLite (MailerLite Limited) & Webhosting
+                    MailerLite (MailerLite Limited) & GitHub Pages (GitHub, Inc.)
                   </span>
                   <p className="text-xs text-[#2C2520]/75 leading-relaxed">
-                    MailerLite slouží k hromadnému odesílání dárků a newsletteru. Webhosting zajišťuje spolehlivý běh webové infrastruktury na serverech v EU.
+                    MailerLite slouží k hromadnému odesílání dárků a newsletteru. GitHub Pages zajišťuje webhosting, tedy provoz webu dusenapapire.cz.
                   </p>
                 </div>
               </div>

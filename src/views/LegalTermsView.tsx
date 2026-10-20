@@ -144,7 +144,7 @@ export const LegalTermsView: React.FC<LegalTermsViewProps> = ({
         },
         {
           num: '4.2',
-          text: 'Platbu kupní ceny je možné provést bezhotovostně prostřednictvím zabezpečené online platební brány integrované v objednávkovém systému SimpleShop – online platební kartou nebo rychlým online bankovním převodem.',
+          text: 'Platbu kupní ceny je možné provést bezhotovostně: online platební kartou prostřednictvím zabezpečené platební brány Stripe integrované v objednávkovém systému SimpleShop, nebo bankovním převodem přímo na bankovní účet prodávající.',
         },
         {
           num: '4.3',
