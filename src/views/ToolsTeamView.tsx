@@ -105,8 +105,8 @@ export const ToolsTeamView: React.FC<ToolsTeamViewProps> = ({
                   src={product.image}
                   alt={detail.headline}
                   className="w-full h-auto object-cover"
-                  width={1200}
-                  height={750}
+                  width={1024}
+                  height={688}
                   referrerPolicy="no-referrer"
                 />
               </div>
