@@ -164,7 +164,9 @@ export default function App() {
         {currentPath === '/tvurci-tym' && (
           <ToolsTeamView
             onNavigateHome={() => navigateTo('/', 'pro-tvrce')}
-            onScrollToNewsletter={scrollToNewsletter}
+            onNavigate={(path, anchor) => navigateTo(path, anchor)}
+            onNavigatePrivacy={() => navigateTo('/ochrana-osobnich-udaju')}
+            onNavigateTerms={() => navigateTo('/obchodni-podminky')}
           />
         )}
 

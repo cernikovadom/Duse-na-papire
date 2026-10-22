@@ -236,33 +236,14 @@ export const siteContent = {
         title: 'Můj tvůrčí tým: Notion, Claude a Canva',
         shortDescription:
           'Jak si nastavit nástroje, které ti pomůžou s psaním, plánováním i propagací. Abys měl/a víc času na tvoření.',
-        status: 'coming_soon',
-        badge: 'Připravuji',
-        badgePosition: 'left',
-        buttonLabel: 'Dát mi vědět',
-        imagePlaceholder: 'Nástroje: Notion, Claude a Canva',
-        faqs: [
-          {
-            question: 'Kdy bude produkt hotový a kolik bude stát?',
-            answer:
-              'Zatím to přesně nevím. Dej mi vědět a ozvu se ti e-mailem, jakmile bude hotový.',
-          },
-          {
-            question: 'Jak produkt dostanu?',
-            answer:
-              'Po zadání e-mailu ti přijde zpráva do schránky. Pokud ji nevidíš, mrkni do hromadné pošty nebo spamu.',
-          },
-          {
-            question: 'Je to vhodné i pro začátečníky?',
-            answer:
-              'Ano. Píšu to tak, aby tomu rozuměl i člověk, který s Notionem, Claudem a Canvou nikdy nepracoval.',
-          },
-          {
-            question: 'Co když budu mít doplňující otázky?',
-            answer: 'Napiš mi na cernikova.dom@gmail.com, ráda odpovím.',
-            isEmailAnswer: true,
-          },
-        ],
+        longDescription:
+          'Systém pro autory, který ti nahradí asistentku, textařku i grafičku.',
+        price: '29 Kč',
+        status: 'available',
+        buttonLabel: 'Chci nástroje',
+        buttonLink: '/tvurci-tym',
+        image: '/images/tvurci-tym.webp',
+        imagePlaceholder: 'Můj tvůrčí tým: Notion, Claude a Canva',
       },
     ] as ProductItem[],
 
@@ -537,6 +518,104 @@ export const siteContent = {
         title: 'Ať nemusíš začínat od nuly',
         text: 'Přepiš šablony do svého hlasu a pusť se do kampaně ještě dnes.',
         buttonText: 'Chci šablony za 349 Kč',
+        belowText: 'Ještě se rozhoduješ? Stáhni si zdarma průvodce Jak zvládnout předprodej knihy.',
+      },
+    },
+
+    toolsDetail: {
+      headline: 'Můj tvůrčí tým: Notion, Claude a Canva',
+      subheadline:
+        'Systém pro autory, který ti nahradí asistentku, textařku i grafičku. Vznikl z mých vlastních zkušeností z kampaně na podporu předprodeje knihy.',
+      price: '29 Kč',
+      buttonText: 'Chci nástroje',
+      checkoutLink: 'https://form.simpleshop.cz/a0Ynn/buy/',
+      productUrl: 'https://form.simpleshop.cz/a0Ynn/',
+      sectionTitle: 'Co v balíčku najdeš',
+      items: [
+        {
+          icon: 'Layers',
+          title: 'Průvodce nastavením Notionu, Clauda a Canvy',
+          description: 'včetně vzoru pokynů, aby Claude psal tvým stylem',
+        },
+        {
+          icon: 'Link',
+          title: 'Propojení Clauda s Notionem a Canvou',
+          description: 'aby plánoval příspěvky, psal texty do kalendáře a připravoval grafiku',
+        },
+        {
+          icon: 'MessageSquare',
+          title: '48 hotových zadání pro Clauda',
+          description:
+            'v angličtině s českým vysvětlením: Instagram, newsletter, oslovování institucí a médií, texty o knize, zpětná vazba na rukopis a plánování',
+        },
+        {
+          icon: 'Send',
+          title: 'Nastavení newsletteru v MailerLite',
+          description: 'od založení účtu po uvítací sérii e-mailů, která běží automaticky',
+        },
+        {
+          icon: 'Calendar',
+          title: 'Týdenní rytmus na 3–4 hodiny',
+          description: 'a plán, jak systém upravit pro jednotlivé fáze knihy, od psaní po čas po vydání',
+        },
+        {
+          icon: 'TrendingUp',
+          title: 'Sběr statistik bez ručního přepisování',
+          description: 'a postup, jak zjistit, co čtenáře baví',
+        },
+        {
+          icon: 'HelpCircle',
+          title: 'Praktické kapitoly',
+          description:
+            'práce z mobilu, kdy se vyplatí platit za nástroje, soukromí a autorská práva u AI, řešení častých problémů a slovníček',
+        },
+        {
+          icon: 'BookOpen',
+          title: 'Hotová autorská základna v Notionu',
+          description:
+            'domovská stránka s automaticky se aktualizujícím přehledem, obsahový kalendář s grafy, nápady, kontakty, měsíční přehled, kapitoly a postavy a knihovna promptů',
+        },
+      ],
+      whoIsItForTitle: 'Pro koho je',
+      whoIsItForList: [
+        'Pro autory, kteří všechno dělají sami a chybí jim asistentka, textařka i grafička',
+        'Pro ty, kdo chtějí mít víc času na psaní a míň na administrativu a propagaci',
+        'Pro autory, kteří si chtějí nastavit jednoduchý systém s Notionem, Claudem a Canvou',
+      ],
+      proofStrip: {
+        numbers: [
+          { value: '124 785 Kč', label: 'vybraná částka' },
+          { value: '170', label: 'podporovatelů' },
+          { value: '30 dní', label: 'kampaně na Pointě' },
+        ],
+        line: 'Tenhle systém vznikl z mé vlastní kampaně na debutový román Mléčné zuby duše.',
+      },
+      faqs: [
+        {
+          question: 'V jaké podobě balíček dostanu?',
+          answer:
+            'Po zaplacení ti přijde e-mail s odkazem na dokument s průvodcem a na hotovou autorskou základnu v Notionu. Pokud ho nevidíš, mrkni do hromadné pošty nebo spamu.',
+        },
+        {
+          question: 'Musím umět anglicky?',
+          answer:
+            'Zadání pro Clauda jsou v angličtině, ke každému z nich ale najdeš české vysvětlení.',
+        },
+        {
+          question: 'Jak to souvisí s průvodcem zdarma a šablonami?',
+          answer:
+            'Průvodce Jak zvládnout předprodej knihy vysvětluje, proč a co dělat. Šablony pro autory dají hotové texty a podklady. Tenhle balíček ukazuje, jak si nastavit nástroje, které ti s tím pomůžou.',
+        },
+        {
+          question: 'Co když budu mít doplňující otázky?',
+          answer: 'Napiš mi na cernikova.dom@gmail.com, ráda odpovím.',
+          isEmailAnswer: true,
+        },
+      ],
+      finalCta: {
+        title: 'Ať máš tvůrčí tým po ruce',
+        text: 'Nastav si nástroje, které ti uberou práci, a získej víc času na psaní.',
+        buttonText: 'Chci nástroje za 29 Kč',
         belowText: 'Ještě se rozhoduješ? Stáhni si zdarma průvodce Jak zvládnout předprodej knihy.',
       },
     },

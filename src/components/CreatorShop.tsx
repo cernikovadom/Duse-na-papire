@@ -86,6 +86,25 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                             referrerPolicy="no-referrer"
                           />
                         </a>
+                      ) : product.id === 'tvurci-tym' ? (
+                        <a
+                          href="/tvurci-tym"
+                          onClick={(e) => {
+                            if (onNavigate) {
+                              e.preventDefault();
+                              onNavigate('/tvurci-tym');
+                            }
+                          }}
+                          className="block relative aspect-[16/10] rounded-[8px] overflow-hidden bg-[#EDE5D8]/60 shadow-[0_4px_16px_rgba(44,37,32,0.06)] group/img cursor-pointer"
+                        >
+                          <img
+                            src={product.image}
+                            alt={product.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                            loading="lazy"
+                            referrerPolicy="no-referrer"
+                          />
+                        </a>
                       ) : (
                         <div className="relative aspect-[16/10] rounded-[8px] overflow-hidden bg-[#EDE5D8]/60 shadow-[0_4px_16px_rgba(44,37,32,0.06)]">
                           <img
@@ -139,7 +158,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                         className="inline-flex items-center text-xs font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] mb-4 cursor-pointer underline underline-offset-4 decoration-[#D9C9B8]"
                       >
                         <Info className="w-3.5 h-3.5 mr-1" />
-                        <span>Více informací</span>
+                        <span>Více informací o nástrojích</span>
                       </a>
                     ) : product.id === 'kampan-pointa' ? (
                       <a
@@ -225,6 +244,20 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                         if (onNavigate) {
                           e.preventDefault();
                           onNavigate('/sablony-pro-autory');
+                        }
+                      }}
+                      className="btn-primary !py-2 !px-4 !text-xs group inline-flex items-center"
+                    >
+                      <ShoppingBag className="w-3.5 h-3.5 mr-1.5" />
+                      <span>{product.buttonLabel}</span>
+                    </a>
+                  ) : product.id === 'tvurci-tym' ? (
+                    <a
+                      href="/tvurci-tym"
+                      onClick={(e) => {
+                        if (onNavigate) {
+                          e.preventDefault();
+                          onNavigate('/tvurci-tym');
                         }
                       }}
                       className="btn-primary !py-2 !px-4 !text-xs group inline-flex items-center"
