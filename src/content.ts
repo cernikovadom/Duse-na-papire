@@ -224,7 +224,7 @@ export const siteContent = {
           'Všechno, co jsem při kampani na podporu vydání svého románu psala od nuly. Hotové, vyzkoušené a připravené k úpravě do tvého hlasu.',
         longDescription:
           'Všechno, co jsem při kampani na podporu vydání svého románu psala od nuly. Hotové, vyzkoušené a připravené k úpravě do tvého hlasu.',
-        price: '349 Kč',
+        price: '249 Kč',
         status: 'available',
         buttonLabel: 'Chci šablony',
         buttonLink: '/sablony-pro-autory',
@@ -238,7 +238,7 @@ export const siteContent = {
           'Jak si nastavit nástroje, které ti pomůžou s psaním, plánováním i propagací. Abys měl/a víc času na tvoření.',
         longDescription:
           'Systém pro autory, který ti nahradí asistentku, textařku i grafičku.',
-        price: '449 Kč',
+        price: '349 Kč',
         status: 'available',
         buttonLabel: 'Chci nástroje',
         buttonLink: '/tvurci-tym',
@@ -288,7 +288,7 @@ export const siteContent = {
       headline: 'Šablony pro autory',
       subheadline:
         'Všechno, co jsem při kampani na podporu vydání svého románu psala od nuly. Hotové, vyzkoušené a připravené k úpravě do tvého hlasu.',
-      price: '349 Kč',
+      price: '249 Kč',
       buttonText: 'Chci šablony',
       checkoutLink: 'https://form.simpleshop.cz/ODq6j/buy/',
       productUrl: 'https://form.simpleshop.cz/ODq6j/',
@@ -517,7 +517,7 @@ export const siteContent = {
       finalCta: {
         title: 'Ať nemusíš začínat od nuly',
         text: 'Přepiš šablony do svého hlasu a pusť se do kampaně ještě dnes.',
-        buttonText: 'Chci šablony za 349 Kč',
+        buttonText: 'Chci šablony za 249 Kč',
         belowText: 'Ještě se rozhoduješ? Stáhni si zdarma průvodce Jak zvládnout předprodej knihy.',
       },
     },
@@ -526,7 +526,7 @@ export const siteContent = {
       headline: 'Můj tvůrčí tým: Notion, Claude a Canva',
       subheadline:
         'Systém pro autory, který ti nahradí asistentku, textařku i grafičku. Vznikl z mých vlastních zkušeností z kampaně na podporu předprodeje knihy.',
-      price: '449 Kč',
+      price: '349 Kč',
       buttonText: 'Chci nástroje',
       checkoutLink: 'https://form.simpleshop.cz/a0Ynn/buy/',
       productUrl: 'https://form.simpleshop.cz/a0Ynn/',
@@ -615,7 +615,7 @@ export const siteContent = {
       finalCta: {
         title: 'Ať máš tvůrčí tým po ruce',
         text: 'Nastav si nástroje, které ti uberou práci, a získej víc času na psaní.',
-        buttonText: 'Chci nástroje za 449 Kč',
+        buttonText: 'Chci nástroje za 349 Kč',
         belowText: 'Ještě se rozhoduješ? Stáhni si zdarma průvodce Jak zvládnout předprodej knihy.',
       },
     },
