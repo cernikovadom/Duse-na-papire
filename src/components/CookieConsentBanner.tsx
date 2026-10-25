@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Settings, X } from 'lucide-react';
 import { siteContent } from '../content';
+import { syncAnalyticsConsent, trackPageView } from '../analytics';
 
 interface CookieSettings {
   essential: boolean;
@@ -48,6 +49,8 @@ export const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
   const savePreferences = (customSettings: CookieSettings) => {
     localStorage.setItem('duse_cookies_consent', JSON.stringify(customSettings));
     setSettings(customSettings);
+    syncAnalyticsConsent();
+    trackPageView(window.location.pathname);
     setIsVisible(false);
     setIsModalOpen(false);
     if (onCloseSettings) onCloseSettings();

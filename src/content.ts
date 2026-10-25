@@ -83,6 +83,8 @@ export const siteContent = {
     tagline: 'Klidná tvorba a vnitřní pořádek v hlučném světě.',
     author: 'Dominika Černíková',
     email: 'cernikova.dom@gmail.com',
+    // Google Analytics 4 – ID měření ve tvaru G-XXXXXXXXXX (prázdné = analytika vypnutá)
+    gaMeasurementId: 'G-S7HCR3G7BP',
     instagramHandle: '@mlecnezubyduse',
     instagramUrl: 'https://www.instagram.com/mlecnezubyduse/',
     copyright: '© 2026 Dominika Černíková',
@@ -1023,7 +1025,7 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
 Vaše osobní údaje neprodávám ani neposkytuji třetím stranám pro marketingové účely. Pro zajištění provozu webu, prodeje a rozesílky využívám prověřené zpracovatele:
 - **SimpleShop (společnost Redbit s.r.o.):** Poskytovatel prodejního formuláře, automatizace objednávek a fakturačního systému.
 - **Stripe (Stripe Payments Europe, Ltd.):** Platební brána pro bezhotovostní platby integrovaná v SimpleShopu.
-- **Google (Gmail, Google Disk):** E-mailová schránka a cloudové úložiště.
+- **Google (Gmail, Google Disk, Google Analytics):** E-mailová schránka, cloudové úložiště a anonymní statistika návštěvnosti webu (jen s vaším souhlasem s analytickými cookies).
 - **MailerLite (MailerLite Limited):** Služba pro hromadné zasílání e-mailů s dárky a newslettery splňující podmínky GDPR.
 - **GitHub Pages (GitHub, Inc.):** Webhosting, provoz webu dusenapapire.cz.
 

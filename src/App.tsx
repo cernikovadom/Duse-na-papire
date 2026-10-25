@@ -13,6 +13,7 @@ import { ToolsTeamView } from './views/ToolsTeamView';
 import { SampleChapterView } from './views/SampleChapterView';
 import { CookieConsentBanner } from './components/CookieConsentBanner';
 import { siteContent, BlogPostItem, StoryCardItem } from './content';
+import { syncAnalyticsConsent, trackPageView } from './analytics';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
@@ -23,6 +24,15 @@ export default function App() {
 
   // Modals state
   const [isCookieSettingsOpen, setIsCookieSettingsOpen] = useState(false);
+
+  // Google Analytics: načíst po souhlasu a posílat zobrazení stránek při každé změně adresy
+  useEffect(() => {
+    syncAnalyticsConsent();
+  }, []);
+
+  useEffect(() => {
+    trackPageView(currentPath);
+  }, [currentPath]);
 
   // Sync with browser navigation
   useEffect(() => {

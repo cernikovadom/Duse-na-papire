@@ -515,10 +515,10 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({
 
                 <div className="p-4 bg-[#FAF8F5] border border-[#D9C9B8]/60 rounded-xl">
                   <span className="font-medium text-[#2C2520] block mb-1">
-                    Google (Gmail, Google Disk)
+                    Google (Gmail, Google Disk, Google Analytics)
                   </span>
                   <p className="text-xs text-[#2C2520]/75 leading-relaxed">
-                    Zabezpečená cloudová e-mailová schránka a cloudové úložiště pro správu objednávek.
+                    Zabezpečená cloudová e-mailová schránka, cloudové úložiště pro správu objednávek a statistika návštěvnosti webu (Google Analytics, jen s vaším souhlasem s analytickými cookies).
                   </p>
                 </div>
 
