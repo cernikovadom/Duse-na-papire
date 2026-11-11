@@ -81,7 +81,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
               </div>
               <p className="font-sans-jost text-base text-[#2C2520] mb-6 leading-relaxed">
                 {selectedGift === 'prvni-kapitola'
-                  ? 'Děkuji, že jste tady. Do e-mailu vám právě letí první kapitola knihy.'
+                  ? 'Děkuju, že jsi tady. Do e-mailu ti právě letí první kapitola knihy.'
                   : 'Děkuju, že jsi tady. Průvodce ti právě letí do e-mailové schránky. Za pár minut ho najdeš ve schránce, a když ne, mrkni do hromadné pošty nebo spamu.'}
               </p>
               {selectedGift === 'prvni-kapitola' && (
@@ -112,7 +112,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Vaše jméno"
+                    placeholder="Tvoje jméno"
                     className="w-full bg-[#FAF8F5] border border-[#D9C9B8]/70 rounded-[5px] px-4 py-3 text-sm font-sans-jost text-[#2C2520] placeholder:text-[#8C7B6B]/60 focus:outline-none focus:border-[#2C2520]"
                   />
                 </div>
@@ -127,7 +127,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Váš e-mail"
+                    placeholder="Tvůj e-mail"
                     className="w-full bg-[#FAF8F5] border border-[#D9C9B8]/70 rounded-[5px] px-4 py-3 text-sm font-sans-jost text-[#2C2520] placeholder:text-[#8C7B6B]/60 focus:outline-none focus:border-[#2C2520]"
                   />
                 </div>

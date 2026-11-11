@@ -164,7 +164,7 @@ export const siteContent = {
   // 3. BOOK JOURNEY (timeline)
   timeline: {
     eyebrow: 'Cesta knihy',
-    title: 'Od rukopisu k vašim rukám',
+    title: 'Od rukopisu do tvých rukou',
     currentStepIndex: 2, // Krok 3 ("Redakce a korektura") je aktuální fáze (0-indexováno: 0, 1, 2)
     steps: [
       {
@@ -185,7 +185,7 @@ export const siteContent = {
       },
       {
         title: 'Tisk',
-        description: 'Z textu se stává kniha, kterou vezmete do ruky.',
+        description: 'Z textu se stává kniha, kterou vezmeš do ruky.',
       },
       {
         title: 'Duben 2027',
@@ -193,7 +193,7 @@ export const siteContent = {
       },
     ] as StepItem[],
     thankYou:
-      'Děkuji všem, kteří knize pomohli na svět. Bez vás by zůstala jen v šuplíku.',
+      'Děkuji všem, kteří knize pomohli na svět. Bez tebe by zůstala jen v šuplíku.',
   },
 
   // 4. PRO TVŮRCE (shop)
@@ -629,7 +629,7 @@ export const siteContent = {
     eyebrow: 'Povídky',
     title: 'Příběhy na jeden šálek čaje',
     intro:
-      'Krátké literární povídky, které se dají přečíst u jednoho šálku čaje. Realistické, tiché a lidské, stejně jako román. Jednu si můžete přečíst zdarma, další jsou k dispozici za malý příspěvek.',
+      'Krátké literární povídky, které se dají přečíst u jednoho šálku čaje. Realistické, tiché a lidské, stejně jako román. Jednu si můžeš přečíst zdarma, další jsou k dispozici za malý příspěvek.',
     cards: [
       {
         slug: 'povidka-zdarma',
@@ -671,7 +671,7 @@ export const siteContent = {
     cycleBox: {
       title: 'Připravuji povídkový cyklus',
       text:
-        'Příběhy sousedů z jedné ulice, které se navzájem proplétají. Provází jimi dítě, které poslouchá, co mu dospělí vyprávějí, a v duchu se vydává na místa z jejich příběhů. Přihlaste se k odběru a dám vám vědět, až vyjde první díl.',
+        'Příběhy sousedů z jedné ulice, které se navzájem proplétají. Provází jimi dítě, které poslouchá, co mu dospělí vyprávějí, a v duchu se vydává na místa z jejich příběhů. Přihlas se k odběru a dám ti vědět, až vyjde první díl.',
       button: 'Chci vědět první',
     },
   },
@@ -710,7 +710,7 @@ Tady se z rukopisu začíná stávat kniha doopravdy. Redaktor nečte text jako 
 
 Bolelo škrtat. Některé věty a celé odstavce, na které jsem byla pyšná, musely pryč. A ještě víc mě zaskočilo, když se ukázalo, že se mi v příběhu zamotala časová osa. Dopisy, na kterých celá kniha stojí, si místy odporovaly. Musela jsem si sednout a kapitolu po kapitole rozepsat, v jakém je to měsíci, kolik je Anně let a kde je v tu chvíli máma.
 
-Potěšilo mě, kolik dokáže udělat jediná věta. Postavy díky drobným úpravám dostaly víc hloubky: najednou je vidět, co se skrývá za tím, co říkají. A potěšilo mě i zjištění, že nemusím přijmout všechno. U několika míst jsem si svou verzi obhájila a nechala ji. Pochopila jsem, že redakce není o tom, že vám někdo přepíše knihu. Je to rozhovor, a poslední slovo má autor, pokud se rozhoduje vědomě.
+Potěšilo mě, kolik dokáže udělat jediná věta. Postavy díky drobným úpravám dostaly víc hloubky: najednou je vidět, co se skrývá za tím, co říkají. A potěšilo mě i zjištění, že nemusím přijmout všechno. U několika míst jsem si svou verzi obhájila a nechala ji. Pochopila jsem, že redakce není o tom, že ti někdo přepíše knihu. Je to rozhovor, a poslední slovo má autor, pokud se rozhoduje vědomě.
 
 6. Korektura
 Korektor hledá to, co už autor nevidí: překlepy, čárky, nejednotné uvozovky, jméno, které se v jedné kapitole píše jinak. Myslela jsem, že svůj text znám nazpaměť. Právě proto v něm chyby nevidím – mozek si je sám opraví.
@@ -766,11 +766,11 @@ Dovolit si špatné dny. Kampaň trvala celý měsíc – od 4. srpna do 3. zá�
 
 Kampaň vyšla. Cíl byl 117 700 Kč a nakonec se vybralo 124 785 Kč, tedy o něco víc, než bylo potřeba. Knihu podpořilo 170 lidí. Ještě v květnu, kdy jsem začínala s přípravami, bych tomu číslu nevěřila. Za každým z těch příspěvků je někdo, kdo si řekl, že tenhle příběh chce číst. Někoho z nich znám celý život, jiné jsem nikdy neviděla.
 
-Poslední den jsem pořád obnovovala stránku kampaně, i když jsem věděla, že se tím nic nezmění. Když kampaň skončila, necítila jsem žádný velký výbuch radosti. Spíš ticho a obrovskou úlevu, jako když po dlouhé cestě konečně položíte těžký batoh. Radost přišla až druhý den ráno, kdy mi došlo, že Mléčné zuby duše opravdu vyjdou.
+Poslední den jsem pořád obnovovala stránku kampaně, i když jsem věděla, že se tím nic nezmění. Když kampaň skončila, necítila jsem žádný velký výbuch radosti. Spíš ticho a obrovskou úlevu, jako když po dlouhé cestě konečně položíš těžký batoh. Radost přišla až druhý den ráno, kdy mi došlo, že Mléčné zuby duše opravdu vyjdou.
 
 ## Co bych vzkázala těm, kdo se bojí
 
-Strach z toho, že budete otravovat, často znamená, že vám na lidech kolem záleží. To je dobrý základ. Neprodáváte sebe, nabízíte příběh. Příběh, který jste psali s tím nejlepším úmyslem a dali do něj kus své duše. A lidé, pro které ten příběh je, si k němu cestu najdou – pokud jim dáte šanci se o něm dozvědět.`,
+Strach z toho, že budeš otravovat, často znamená, že ti na lidech kolem záleží. To je dobrý základ. Neprodáváš sebe, nabízíš příběh. Příběh, který jsi psal/a s tím nejlepším úmyslem a dal/a do něj kus své duše. A lidé, pro které ten příběh je, si k němu cestu najdou – pokud jim dáš šanci se o něm dozvědět.`,
       },
       {
         slug: 'psani-mezi-krmenim-a-uspavanim',
@@ -820,7 +820,7 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
     paragraph1:
       'Jmenuji se Dominika a jsem máma, introvertka a autorka projektu Duše na papíře. Dlouho jsem pracovala s čísly a návrhy, než jsem našla svůj opravdový domov v psaní a tvoření.',
     paragraph2:
-      'Věřím, že hloubka a citlivost nejsou slabost, ale velký dar. Mým cílem je ukázat, že tvořit a žít se dá i s jemností, v tichu a bez neustálého tlaku na výkon. Píšu příběhy, které v sobě nesou klid přírody, a sdílím, co jsem se na své cestě naučila. Jsem ráda, že jste tady.',
+      'Věřím, že hloubka a citlivost nejsou slabost, ale velký dar. Mým cílem je ukázat, že tvořit a žít se dá i s jemností, v tichu a bez neustálého tlaku na výkon. Píšu příběhy, které v sobě nesou klid přírody, a sdílím, co jsem se na své cestě naučila. Jsem ráda, že jsi tady.',
     fragments: [
       {
         id: 'forest',
@@ -877,8 +877,8 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
     } as Record<string, string>,
     title: 'Zůstaňme v kontaktu',
     text:
-      'Přihlaste se k odběru a jako poděkování si vyberte dárek: první kapitolu knihy Mléčné zuby duše, nebo průvodce Jak zvládnout předprodej knihy.',
-    giftLabel: 'Vyberte si dárek na uvítanou',
+      'Přihlas se k odběru a jako poděkování si vyber dárek: první kapitolu knihy Mléčné zuby duše, nebo průvodce Jak zvládnout předprodej knihy.',
+    giftLabel: 'Vyber si dárek na uvítanou',
     giftOptions: [
       { id: 'prvni-kapitola', label: 'První kapitola knihy Mléčné zuby duše' },
       { id: 'pruvodce-predprodej', label: 'Průvodce Jak zvládnout předprodej knihy' },
@@ -887,10 +887,10 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
     emailLabel: 'E-mail',
     consentPrefix: 'Souhlasím se ',
     consentLinkText: 'zpracováním osobních údajů',
-    consentSuffix: ' za účelem zasílání newsletteru. Odhlásit se můžete kdykoli.',
+    consentSuffix: ' za účelem zasílání newsletteru. Odhlásit se můžeš kdykoli.',
     buttonText: 'Přihlásit se',
     successMessage:
-      'Děkuji, že jste tady. Váš vybraný dárek vám právě letí do e-mailové schránky.',
+      'Děkuju, že jsi tady. Tvůj vybraný dárek ti právě letí do e-mailové schránky.',
     errorMessage: 'Něco se nepovedlo. Zkuste to prosím znovu.',
   },
 
