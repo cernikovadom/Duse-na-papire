@@ -173,7 +173,7 @@ export const siteContent = {
       },
       {
         title: 'Kampaň na podporu vydání knihy',
-        description: 'Na Pointě jsem díky 170 podporovatelům vybrala 124 785 Kč, víc, než byl cíl.',
+        description: 'Na Pointě jsem díky 170 podporovatelům vybrala 124 785 Kč. Víc, než byl cíl.',
       },
       {
         title: 'Redakce a korektura',

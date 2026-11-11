@@ -44,7 +44,7 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                 key={product.id}
                 className="bg-[#FAF8F5]/90 rounded-[8px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-[#FAF8F5] hover:shadow-[0_16px_36px_rgba(44,37,32,0.06)] hover:-translate-y-0.5"
               >
-                <div>
+                <div className="flex flex-col flex-1">
                   {/* Image / Mockup */}
                   <div className="mb-6 relative">
                     {product.image ? (
@@ -146,7 +146,8 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
 
                   {/* "Více" link for products with detailed long description */}
                   {(product.longDescription || product.id === 'tvurci-tym') && (
-                    product.id === 'tvurci-tym' ? (
+                    <div className="mt-auto">
+                    {product.id === 'tvurci-tym' ? (
                       <a
                         href="/tvurci-tym"
                         onClick={(e) => {
@@ -196,7 +197,8 @@ export const CreatorShop: React.FC<CreatorShopProps> = ({
                         <Info className="w-3.5 h-3.5 mr-1" />
                         <span>Více informací</span>
                       </button>
-                    )
+                    )}
+                    </div>
                   )}
                 </div>
 
