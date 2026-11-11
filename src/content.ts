@@ -201,7 +201,7 @@ export const siteContent = {
     eyebrow: 'Pro tvůrce',
     title: 'Co jsem se naučila, předávám dál',
     intro:
-      'Sdílím, co jsem se naučila na vlastní cestě, aby to ti další měli lehčí. Žádné zaručené recepty na úspěch, jen poctivé zkušenosti, postupy a nástroje, které mi opravdu pomohly.',
+      'Sdílím s tebou, co jsem se naučila na vlastní cestě, aby to pro tebe bylo lehčí. Žádné zaručené recepty na úspěch, jen poctivé zkušenosti, postupy a nástroje, které mi opravdu pomohly.',
     products: [
       {
         id: 'kampan-pointa',
@@ -209,7 +209,7 @@ export const siteContent = {
         shortDescription:
           'Praktický průvodce přípravou a vedením kampaně na podporu vydání knihy. Vše, co bych chtěla vědět, než jsem začala.',
         longDescription:
-          'Moje kampaň vybrala 124 785 Kč od 170 podporovatelů a přípravu jsem začala zhruba dva a půl měsíce před spuštěním. V průvodci najdeš, jak si kampaň naplánovat, co připravit předem, jak mluvit o knize bez pocitu, že se vnucuješ, a jak udržet energii po celý měsíc kampaně. Píšu ho pro autory, kteří chtějí vydat knihu klidně a s rozmyslem.',
+          'Moje kampaň vybrala 124 785 Kč od 170 podporovatelů a přípravu jsem začala zhruba dva a půl měsíce před spuštěním. V průvodci najdeš, jak si kampaň naplánovat, co připravit předem, jak mluvit o knize bez pocitu, že se vnucuješ, a jak udržet energii po celý měsíc kampaně. Píšu ho pro tebe, pokud chceš vydat knihu klidně a s rozmyslem.',
         price: 'Zdarma',
         badge: 'Zdarma',
         badgePosition: 'left',
@@ -239,7 +239,7 @@ export const siteContent = {
         shortDescription:
           'Jak si nastavit nástroje, které ti pomůžou s psaním, plánováním i propagací. Abys měl/a víc času na tvoření.',
         longDescription:
-          'Systém pro autory, který ti nahradí asistentku, textařku i grafičku.',
+          'Systém, který ti nahradí asistentku, textařku i grafičku.',
         price: '349 Kč',
         status: 'available',
         buttonLabel: 'Chci nástroje',
@@ -249,11 +249,12 @@ export const siteContent = {
       },
     ] as ProductItem[],
 
-    whoIsItForTitle: 'Pro koho to je',
+    whoIsItForTitle: 'Je to pro tebe, pokud…',
     whoIsItForBullets: [
-      'Pro autory, kteří přemýšlejí o vlastním vydání knihy a nevědí, kde začít.',
-      'Pro ty, kterým je propagace nepříjemná a hledají jemnější cestu.',
-      'Pro všechny, kdo chtějí tvořit s plánem, ale bez tlaku na výkon.',
+      'přemýšlíš o vlastním vydání knihy a nevíš, kde začít,',
+      'je ti propagace nepříjemná a hledáš jemnější cestu,',
+      'se ti psaní knihy vleče, protože máš míň času, než bys chtěl/a,',
+      'chceš tvořit s plánem, ale bez tlaku na výkon.',
     ],
 
     faqTitle: 'Časté otázky',
@@ -480,11 +481,11 @@ export const siteContent = {
         footerNote:
           'Každý styl obsahuje všech 7 témat: 5 příspěvků na Instagram 1080×1350 (4:5), Story (1080×1920) a leták A4.',
       },
-      whoIsItForTitle: 'Pro koho je',
+      whoIsItForTitle: 'Je to pro tebe, pokud…',
       whoIsItForList: [
-        'Pro autory, kteří chystají kampaň na podporu vydání knihy nebo předprodej',
-        'Pro ty, kdo nechtějí začínat od nuly a nemají čas psát desítky e-mailů a příspěvků',
-        'Pro introverty, kterým se o vlastní knize nemluví snadno',
+        'chystáš kampaň na podporu vydání knihy nebo předprodej,',
+        'nechceš začínat od nuly a nemáš čas psát desítky e-mailů a příspěvků,',
+        'se ti o vlastní knize nemluví snadno.',
       ],
       proofStrip: {
         numbers: [
@@ -527,7 +528,7 @@ export const siteContent = {
     toolsDetail: {
       headline: 'Můj tvůrčí tým: Notion, Claude a Canva',
       subheadline:
-        'Systém pro autory, který ti nahradí asistentku, textařku i grafičku. Vznikl z mých vlastních zkušeností z kampaně na podporu předprodeje knihy.',
+        'Systém, který ti nahradí asistentku, textařku i grafičku. Vznikl z mých vlastních zkušeností z kampaně na podporu předprodeje knihy.',
       price: '349 Kč',
       buttonText: 'Chci nástroje',
       checkoutLink: 'https://form.simpleshop.cz/a0Ynn/buy/',
@@ -578,11 +579,11 @@ export const siteContent = {
             'domovská stránka s automaticky se aktualizujícím přehledem, obsahový kalendář s grafy, nápady, kontakty, měsíční přehled, kapitoly a postavy a knihovna promptů',
         },
       ],
-      whoIsItForTitle: 'Pro koho je',
+      whoIsItForTitle: 'Je to pro tebe, pokud…',
       whoIsItForList: [
-        'Pro autory, kteří všechno dělají sami a chybí jim asistentka, textařka i grafička',
-        'Pro ty, kdo chtějí mít víc času na psaní a míň na administrativu a propagaci',
-        'Pro autory, kteří si chtějí nastavit jednoduchý systém s Notionem, Claudem a Canvou',
+        'všechno děláš sama a chybí ti asistentka, textařka i grafička,',
+        'chceš mít víc času na psaní a míň na administrativu a propagaci,',
+        'si chceš nastavit jednoduchý systém s Notionem, Claudem a Canvou.',
       ],
       proofStrip: {
         numbers: [
@@ -606,7 +607,7 @@ export const siteContent = {
         {
           question: 'Jak to souvisí s průvodcem zdarma a šablonami?',
           answer:
-            'Průvodce Jak zvládnout předprodej knihy vysvětluje, proč a co dělat. Šablony pro autory dají hotové texty a podklady. Tenhle balíček ukazuje, jak si nastavit nástroje, které ti s tím pomůžou.',
+            'Průvodce Jak zvládnout předprodej knihy vysvětluje, proč a co dělat. Šablony pro autory ti dají hotové texty a podklady. V tomhle balíčku uvidíš, jak si nastavit nástroje, které ti s tím pomůžou.',
         },
         {
           question: 'Co když budu mít doplňující otázky?',

@@ -82,7 +82,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
               <p className="font-sans-jost text-base text-[#2C2520] mb-6 leading-relaxed">
                 {selectedGift === 'prvni-kapitola'
                   ? 'Děkuji, že jste tady. Do e-mailu vám právě letí první kapitola knihy.'
-                  : 'Děkuji, že jste tady. Průvodce vám právě letí do e-mailové schránky. Za pár minut ho najdete ve své poště (pokud nedorazí, mrkněte do spamu).'}
+                  : 'Děkuju, že jsi tady. Průvodce ti právě letí do e-mailové schránky. Za pár minut ho najdeš ve schránce, a když ne, mrkni do hromadné pošty nebo spamu.'}
               </p>
               {selectedGift === 'prvni-kapitola' && (
                 <button
