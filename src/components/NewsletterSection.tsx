@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Check, BookOpen, ArrowRight } from 'lucide-react';
+import { Mail, Check, BookOpen, ArrowRight, Download } from 'lucide-react';
 import { siteContent } from '../content';
 
 interface NewsletterSectionProps {
@@ -79,11 +79,25 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
               <div className="w-10 h-10 rounded-full bg-[#FAF8F5] mx-auto mb-3 flex items-center justify-center text-[#2C2520]">
                 <Check className="w-5 h-5 stroke-[2]" />
               </div>
+              <h3 className="text-2xl font-light text-[#2C2520] font-serif-cormorant mb-3">
+                {selectedGift === 'prvni-kapitola' ? 'Děkuji, že jste tady.' : 'Děkuju, že jsi tady.'}
+              </h3>
               <p className="font-sans-jost text-base text-[#2C2520] mb-6 leading-relaxed">
                 {selectedGift === 'prvni-kapitola'
-                  ? 'Děkuju, že jsi tady. Do e-mailu ti právě letí první kapitola knihy.'
-                  : 'Děkuju, že jsi tady. Průvodce ti právě letí do e-mailové schránky. Za pár minut ho najdeš ve schránce, a když ne, mrkni do hromadné pošty nebo spamu.'}
+                  ? 'Vaše první kapitola je připravená ke stažení. Pro jistotu vám ji posílám i e-mailem. Kdyby nedorazil do pár minut, mrkněte do složky Hromadné (Seznam) nebo Promoakce (Gmail).'
+                  : 'Průvodce si můžeš stáhnout hned. Pro jistotu ti ho posílám i e-mailem. Kdyby nedorazil do pár minut, mrkni do složky Hromadné (Seznam) nebo Promoakce (Gmail).'}
               </p>
+              {siteContent.newsletter.downloads[selectedGift] && (
+                <a
+                  href={siteContent.newsletter.downloads[selectedGift]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center mb-3"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  <span>{selectedGift === 'prvni-kapitola' ? 'Stáhnout první kapitolu' : 'Stáhnout průvodce'}</span>
+                </a>
+              )}
               {selectedGift === 'prvni-kapitola' && (
                 <button
                   onClick={onOpenSampleChapter}

@@ -875,6 +875,12 @@ Není to o tom mít čas. Je to o tom nepřestat. Pomalu se taky dojde. Někdy p
       'pruvodce-predprodej':
         'https://assets.mailerlite.com/jsonp/2393780/forms/201475959156639036/subscribe',
     } as Record<string, string>,
+    // Odkazy ke stažení zobrazené po úspěšném přihlášení (DOPLNIT – dokud je odkaz prázdný, tlačítko se nezobrazí)
+    downloads: {
+      'prvni-kapitola': 'https://dusenapapire.cz/prvni-kapitola',
+      'pruvodce-predprodej':
+        'https://drive.google.com/uc?export=download&id=1fkRDYVOQVaC1ZH6RHl4CSSnIxO4TrlK9',
+    } as Record<string, string>,
     title: 'Zůstaňme v kontaktu',
     text:
       'Přihlas se k odběru a jako poděkování si vyber dárek: první kapitolu knihy Mléčné zuby duše, nebo průvodce Jak zvládnout předprodej knihy.',
