@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Mail, Check, BookOpen, ArrowRight, Download } from 'lucide-react';
+import { Mail, Check, ArrowRight, Download } from 'lucide-react';
 import { siteContent } from '../content';
 
 interface NewsletterSectionProps {
-  onOpenSampleChapter: () => void;
   onNavigatePrivacy: () => void;
 }
 
 export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
-  onOpenSampleChapter,
   onNavigatePrivacy,
 }) => {
   const [name, setName] = useState('');
@@ -97,15 +95,6 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
                   <Download className="w-4 h-4 mr-2" />
                   <span>{selectedGift === 'prvni-kapitola' ? 'Stáhnout první kapitolu' : 'Stáhnout průvodce'}</span>
                 </a>
-              )}
-              {selectedGift === 'prvni-kapitola' && (
-                <button
-                  onClick={onOpenSampleChapter}
-                  className="btn-primary !text-xs !py-2.5 inline-flex items-center cursor-pointer"
-                >
-                  <BookOpen className="w-4 h-4 mr-2" />
-                  <span>Přečíst první kapitolu</span>
-                </button>
               )}
             </div>
           ) : (

@@ -80,7 +80,6 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 9. Newsletter */}
       <NewsletterSection
-        onOpenSampleChapter={onOpenSampleChapter}
         onNavigatePrivacy={onNavigatePrivacy}
       />
     </main>
