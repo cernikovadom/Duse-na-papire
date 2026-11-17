@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowLeft, Share2, BookOpen } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, Share2, BookOpen, Check } from 'lucide-react';
 import { BlogPostItem, siteContent } from '../content';
 import { PlaceholderFrame } from '../components/PlaceholderFrame';
 
@@ -14,6 +14,18 @@ export const BlogPostView: React.FC<BlogPostViewProps> = ({
   onNavigateBack,
   onOpenSampleChapter,
 }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // schránka nedostupná – nic neukazujeme, aby potvrzení nelhalo
+    }
+  };
+
   return (
     <main className="pt-32 pb-24 md:pt-40 md:pb-32 min-h-screen">
       <div className="max-w-4xl mx-auto px-6 md:px-10">
@@ -148,15 +160,15 @@ export const BlogPostView: React.FC<BlogPostViewProps> = ({
               Dominika Černíková · Duše na papíře
             </span>
             <button
-              onClick={() => {
-                if (navigator.clipboard) {
-                  navigator.clipboard.writeText(window.location.href);
-                }
-              }}
+              onClick={handleCopyLink}
               className="inline-flex items-center text-xs font-sans-jost text-[#8C7B6B] hover:text-[#2C2520] transition-colors cursor-pointer"
             >
-              <Share2 className="w-3.5 h-3.5 mr-1.5" />
-              <span>Sdílet odkaz</span>
+              {copied ? (
+                <Check className="w-3.5 h-3.5 mr-1.5" />
+              ) : (
+                <Share2 className="w-3.5 h-3.5 mr-1.5" />
+              )}
+              <span aria-live="polite">{copied ? 'Odkaz zkopírován ✓' : 'Sdílet odkaz'}</span>
             </button>
           </div>
         </div>
